@@ -8,8 +8,9 @@ class App extends Component {
     super();
     this.state = {
       films: [],
-      filmCount: ''
-    };
+      filmCount: '',
+      currentFilm: {}
+    }
   }
 
   componentDidMount() {
@@ -17,21 +18,33 @@ class App extends Component {
   }
 
   fetchFilm = async () => {
-    // const randomNumber = Math.floor(Math.random() * 7) + 1;
     const url = 'https://swapi.co/api/films/';
     const response = await fetch(url);
     const films = await response.json();
     this.setState({
       films: films.results,
       filmCount: films.count
-    });
+    })
+    //is calling this here bad?
+    this.getRandomFilm()
   };
 
+  getRandomFilm = () => {
+    // update RNG to include 0
+    const randomNumber = Math.floor(Math.random() * 6) + 1;
+    const currentFilm  = this.state.films[randomNumber]
+    console.log(currentFilm)
+    this.setState({
+      currentFilm
+    })
+  }
+
   render() {
+    const {currentFilm} = this.state;
     return (
       <div>
         <h1>SWAPIBOX</h1>
-        <ScrollingText />
+        <ScrollingText currentFilm={currentFilm} />
       </div>
     );
   }
