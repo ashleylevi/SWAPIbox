@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
+
 import './App.css';
 
 import { ScrollingText } from '../ScrollingText/ScrollingText';
+import { Nav } from '../Nav/Nav';
+
 
 class App extends Component {
   constructor() {
@@ -43,8 +46,8 @@ class App extends Component {
     const { currentFilm } = this.state;
     return (
       <div>
-        <h1>SWAPIBOX</h1>
-        <ScrollingText {...currentFilm} />
+        <Nav />
+        {/* <ScrollingText {...currentFilm} /> */}
       </div>
     );
   }
