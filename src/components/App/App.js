@@ -10,7 +10,7 @@ class App extends Component {
       films: [],
       filmCount: '',
       currentFilm: {}
-    }
+    };
   }
 
   componentDidMount() {
@@ -24,27 +24,27 @@ class App extends Component {
     this.setState({
       films: films.results,
       filmCount: films.count
-    })
+    });
     //is calling this here bad?
-    this.getRandomFilm()
+    this.getRandomFilm();
   };
 
   getRandomFilm = () => {
     // update RNG to include 0
     const randomNumber = Math.floor(Math.random() * 6) + 1;
-    const currentFilm  = this.state.films[randomNumber]
-    console.log(currentFilm)
+    const currentFilm = this.state.films[randomNumber];
+    console.log(currentFilm);
     this.setState({
       currentFilm
-    })
-  }
+    });
+  };
 
   render() {
-    const {currentFilm} = this.state;
+    const { currentFilm } = this.state;
     return (
       <div>
         <h1>SWAPIBOX</h1>
-        <ScrollingText currentFilm={currentFilm} />
+        <ScrollingText {...currentFilm} />
       </div>
     );
   }
