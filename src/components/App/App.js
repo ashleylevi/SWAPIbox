@@ -16,7 +16,8 @@ class App extends Component {
       films: [],
       filmCount: '',
       currentFilm: {},
-      people: []
+      people: [],
+      vehicles: []
     };
   }
 
@@ -26,6 +27,9 @@ class App extends Component {
 
     const people = await API.fetchPeople();
     await this.loadPeopleData(people.results);
+
+    const vehicles = await API.fetchVehicles();
+    await this.loadVehicleData(vehicles.results)
   }
 
   loadFilmData = filmsArray => {
@@ -43,6 +47,13 @@ class App extends Component {
       people
     });
   };
+
+  loadVehicleData = async vehiclesArray => {
+    const vehicles = await Helper.cleanVehicleData(vehiclesArray);
+    this.setState({
+      vehicles
+    })
+  }
 
   render() {
     const { currentFilm } = this.state;

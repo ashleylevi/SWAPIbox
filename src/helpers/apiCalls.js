@@ -13,3 +13,10 @@ export const fetchPeople = async () => {
   const people = await response.json();
   return people;
 };
+
+export const fetchVehicles = async () => {
+  const url = 'https://swapi.co/api/vehicles/'
+  const response = await fetch(url);
+  const vehicles = await response.json();
+  return vehicles
+}
