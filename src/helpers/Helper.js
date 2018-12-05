@@ -18,13 +18,6 @@ export const cleanPeopleData = async peopleArray => {
 
     const homeworldObj = parsedData[0];
     const speciesObj = parsedData[1];
-    console.log({
-      name: person.name,
-      homeworld: homeworldObj.name,
-      homePop: homeworldObj.population,
-      species: speciesObj.name,
-      isFavorite: false
-    });
 
     return {
       name: person.name,
@@ -36,3 +29,16 @@ export const cleanPeopleData = async peopleArray => {
   });
   return Promise.all(people);
 };
+
+export const cleanVehicleData = async vehiclesArray => {
+  const vehicles = await vehiclesArray.map(async vehicle => {
+    return {
+      name: vehicle.name,
+      model: vehicle.model,
+      class: vehicle.vehicle_class,
+      passengers: vehicle.passengers
+    }
+  })
+  return Promise.all(vehicles);
+}
+
