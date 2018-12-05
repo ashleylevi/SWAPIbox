@@ -3,11 +3,14 @@ import './Nav.css';
 
 export const Nav = () => {
   return (
-    <div className="nav">
+    <div>
+      <section className="nav">
         <button>People</button>
         <button>Planets</button>
         <button>Vehicles</button>
         <button>Favorites</button>
+      </section>
+      <section className="background-fade" />
     </div>
   );
 };

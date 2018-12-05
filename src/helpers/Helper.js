@@ -6,7 +6,7 @@ export const getRandomFilm = filmArray => {
 };
 
 export const cleanPeopleData = async peopleArray => {
-  const peoplePromises = peopleArray.map(async person => {
+  const people = await peopleArray.map(async person => {
     const { homeworld, species } = person;
 
     const fetches = [fetch(homeworld), fetch(species)];
@@ -15,6 +15,24 @@ export const cleanPeopleData = async peopleArray => {
     const parsedResponses = [response[0].json(), response[1].json()];
 
     const parsedData = await Promise.all(parsedResponses);
-    console.log(parsedData);
+
+    const homeworldObj = parsedData[0];
+    const speciesObj = parsedData[1];
+    console.log({
+      name: person.name,
+      homeworld: homeworldObj.name,
+      homePop: homeworldObj.population,
+      species: speciesObj.name,
+      isFavorite: false
+    });
+
+    return {
+      name: person.name,
+      homeworld: homeworldObj.name,
+      homePop: homeworldObj.population,
+      species: speciesObj.name,
+      isFavorite: false
+    };
   });
+  return Promise.all(people);
 };
