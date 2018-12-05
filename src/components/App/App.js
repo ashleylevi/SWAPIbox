@@ -37,7 +37,9 @@ class App extends Component {
     });
   };
 
-  loadPeopleData = peopleArray => {};
+  loadPeopleData = peopleArray => {
+    Helper.cleanPeopleData(peopleArray);
+  };
 
   render() {
     const { currentFilm } = this.state;
