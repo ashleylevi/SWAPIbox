@@ -13,7 +13,7 @@ export const ScrollingText = ({
         <div className="crawl">
           <div className="title">
             <h1>
-              Star Wars Episode {episode_id}: {title}
+              Star Wars {episode_id}: {title}
             </h1>
             <p>{release_date}</p>
           </div>

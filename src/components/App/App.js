@@ -25,7 +25,7 @@ class App extends Component {
     this.loadFilmData(films.results);
 
     const people = await API.fetchPeople();
-    this.loadPeopleData(people.results);
+    await this.loadPeopleData(people.results);
   }
 
   loadFilmData = filmsArray => {
@@ -37,8 +37,11 @@ class App extends Component {
     });
   };
 
-  loadPeopleData = peopleArray => {
-    Helper.cleanPeopleData(peopleArray);
+  loadPeopleData = async peopleArray => {
+    const people = await Helper.cleanPeopleData(peopleArray);
+    this.setState({
+      people
+    });
   };
 
   render() {
