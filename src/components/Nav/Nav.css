@@ -1,13 +1,14 @@
 .nav {
-  height: 140px;
+  height: 40px;
   display: flex;
   justify-content: space-around;
   align-content: center;
   align-items: center;
-  width: 75%;
+  width: 100%;
   margin: 0 auto;
   position: relative;
   z-index: 2;
+  background-color:#bea64f;
 }
 
 button {

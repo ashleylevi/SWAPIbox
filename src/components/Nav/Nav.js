@@ -8,6 +8,7 @@ export const Nav = () => {
         <button>People</button>
         <button>Planets</button>
         <button>Vehicles</button>
+        <button>Favorites</button>
     </div>
   )
 }
