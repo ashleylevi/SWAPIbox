@@ -4,6 +4,7 @@ import './App.css';
 
 import { ScrollingText } from '../ScrollingText/ScrollingText';
 import { Nav } from '../Nav/Nav';
+import { Header } from '../Header/Header';
 
 
 class App extends Component {
@@ -46,8 +47,9 @@ class App extends Component {
     const { currentFilm } = this.state;
     return (
       <div>
+        <Header />
         <Nav />
-        {/* <ScrollingText {...currentFilm} /> */}
+        <ScrollingText {...currentFilm} />
       </div>
     );
   }
