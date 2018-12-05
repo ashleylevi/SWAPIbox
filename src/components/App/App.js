@@ -6,6 +6,8 @@ import { ScrollingText } from '../ScrollingText/ScrollingText';
 import { Nav } from '../Nav/Nav';
 import { Header } from '../Header/Header';
 
+import * as API from '../../helpers/apiCalls';
+import * as Helper from '../../helpers/Helper';
 
 class App extends Component {
   constructor() {
@@ -13,35 +15,29 @@ class App extends Component {
     this.state = {
       films: [],
       filmCount: '',
-      currentFilm: {}
+      currentFilm: {},
+      people: []
     };
   }
 
-  componentDidMount() {
-    this.fetchFilm();
+  async componentDidMount() {
+    const films = await API.fetchFilms();
+    this.loadFilmData(films.results);
+
+    const people = await API.fetchPeople();
+    this.loadPeopleData(people.results);
   }
 
-  fetchFilm = async () => {
-    const url = 'https://swapi.co/api/films/';
-    const response = await fetch(url);
-    const films = await response.json();
+  loadFilmData = filmsArray => {
+    const currentFilm = Helper.getRandomFilm(filmsArray);
     this.setState({
-      films: films.results,
-      filmCount: films.count
-    });
-    //is calling this here bad?
-    this.getRandomFilm();
-  };
-
-  getRandomFilm = () => {
-    // update RNG to include 0
-    const randomNumber = Math.floor(Math.random() * 6) + 1;
-    const currentFilm = this.state.films[randomNumber];
-    console.log(currentFilm);
-    this.setState({
+      films: filmsArray.results,
+      filmCount: filmsArray.count,
       currentFilm
     });
   };
+
+  loadPeopleData = peopleArray => {};
 
   render() {
     const { currentFilm } = this.state;
