@@ -5,23 +5,49 @@
   justify-content: space-evenly;
   align-content: center;
   align-items: center;
-  width: 100%;
+  width: 80%;
   margin: 0 auto;
   position: relative;
   z-index: 2;
-  background: #bea64f;
+  background-color:#228DFF;
+  border-radius: 20px;
+  /* border-bottom-right-radius: 20%; */
 }
 
 button {
   width: 150px;
   height: 40px;
+  color: #228DFF;
   font-family: 'Pathway Gothic One', sans-serif;
   font-size: 1.6rem;
   font-weight: 600;
+  background-color: #228DFF;
+  border-left: 2px solid #0775ea;
+  border-right: 2px solid #0775ea;
+  border-top: none;
+  border-bottom: none;
+  -webkit-animation: neon2 1.5s ease-in-out infinite alternate;
+  -moz-animation: neon2 1.5s ease-in-out infinite alternate;
+  animation: neon2 1.5s ease-in-out infinite alternate;
 }
 
-button {
-  -moz-box-shadow: 0px 1px 0px 0px #bea64f;
+button:hover {
+  color:#feda4a;
+  cursor: pointer;
+
+}
+
+@-webkit-keyframes neon2 {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #228DFF, 0 0 70px #228DFF, 0 0 80px #228DFF, 0 0 100px #228DFF, 0 0 150px #228DFF;
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #228DFF, 0 0 35px #228DFF, 0 0 40px #228DFF, 0 0 50px #228DFF, 0 0 75px #228DFF;
+  }
+}
+
+/* button { */
+  /* -moz-box-shadow: 0px 1px 0px 0px #bea64f;
   -webkit-box-shadow: 0px 1px 0px 0px #bea64f;
   box-shadow: 0px 1px 0px 0px #bea64f;
   background: -webkit-gradient(
@@ -50,9 +76,9 @@ button {
   font-weight: bold;
   padding: 6px 24px;
   text-decoration: none;
-  text-shadow: 0px 1px 0px #ffee66;
-}
-button:hover {
+  text-shadow: 0px 1px 0px #ffee66; */
+/* } */
+/* button:hover {
   background: -webkit-gradient(
     linear,
     left top,
@@ -71,7 +97,7 @@ button:hover {
 button: {
   position: relative;
   top: 1px;
-}
+} */
 
 /* .background-fade {
   height: 200px;
