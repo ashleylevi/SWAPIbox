@@ -1,0 +1,15 @@
+.nav {
+  height: 200px;
+  border: 1px solid black;
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  align-items: center;
+  width: 75%;
+  margin: 0 auto;
+}
+
+button {
+  width: 150px;
+  height: 40px;
+}
