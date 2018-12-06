@@ -86,5 +86,3 @@ class App extends Component {
 }
 
 export default App;
-
-//Test for inputs, test for state being set and test for error status
