@@ -46,7 +46,6 @@ button {
 button:hover {
   color: #feda4a;
   cursor: pointer;
-
 }
 
 @-webkit-keyframes neon2 {
