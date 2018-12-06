@@ -1,71 +1,76 @@
 import * as API from './apiCalls';
-// import { promises } from 'fs';
 import { mockData } from './mockData';
 
 describe('API', () => {
   const { films, people, planets, vehicles } = mockData;
-  beforeEach(() => {
-  })
+  beforeEach(() => {});
 
   describe('fetch films', () => {
+    it('should call fetch with the correct params', async () => {
+      window.fetch = jest.fn().mockImplementation(() => {
+        return Promise.resolve({
+          json: () => {
+            return Promise.resolve(films);
+          },
+          ok: true
+        });
+      });
+
+      const expected = 'https://swapi.co/api/films/';
+
+      await API.fetchFilms();
+      expect(window.fetch).toHaveBeenCalledWith(expected);
+    });
+  });
+
+  describe('fetch people', () => {
     it('should call fetch with the correct params', () => {
       window.fetch = jest.fn().mockImplementation(() => {
-        Promise.resolve({json: () => {films}})
+        return Promise.resolve({
+          json: () => {
+            return Promise.resolve(people);
+          },
+          ok: true
+        });
+      });
 
-      })
+      const expected = 'https://swapi.co/api/people/';
+      API.fetchPeople();
+      expect(window.fetch).toHaveBeenCalledWith(expected);
+    });
+  });
 
-    // setup
-      const expected = 'https://swapi.co/api/films/';
-      // execution
-      API.fetchFilms();
-
-      // expectation
-      expect(window.fetch).toHaveBeenCalledWith(expected)
-    })
-
-
-
-    it('should throw an error if everything is not ok', () => {
-        
-    })
-
-
-
-  })
-
-  describe.skip('fetch people', () => {
+  describe('fetch vehicles', () => {
     it('should call fetch with the correct params', () => {
-    
-    })
+      window.fetch = jest.fn().mockImplementation(() => {
+        return Promise.resolve({
+          json: () => {
+            return Promise.resolve(vehicles);
+          },
+          ok: true
+        });
+      });
 
-    it('should throw an error if everything is not ok', () => {
-        
-    })
+      const expected = 'https://swapi.co/api/vehicles/';
+      API.fetchVehicles();
+      expect(window.fetch).toHaveBeenCalledWith(expected);
+    });
+  });
 
-  })
-
-  describe.skip('fetch vehicles', () => {
+  describe('fetch planets', () => {
     it('should call fetch with the correct params', () => {
-    
-    })
+      window.fetch = jest.fn().mockImplementation(() => {
+        return Promise.resolve({
+          json: () => {
+            return Promise.resolve(planets);
+          },
+          ok: true
+        });
+      });
+      const expected = 'https://swapi.co/api/planets/';
+      API.fetchPlanets();
 
-    it('should throw an error if everything is not ok', () => {
-        
-    })
-
-  })
-
-  describe.skip('fetch planets', () => {
-    it('should call fetch with the correct params', () => {
-    
-    })
-
-    it('should throw an error if everything is not ok', () => {
-        
-    })
-
-  })
-
-})
-
-
+      expect(window.fetch).toHaveBeenCalledWith(expected);
+    });
+  });
+});

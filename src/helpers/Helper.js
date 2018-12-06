@@ -46,7 +46,6 @@ export const cleanPlanetsData = async planetsArray => {
     const { residents } = planet;
     const promisedPeople = residents.map(async resident => {
       const response = await fetch(resident);
-      console.log(response);
       return response.json();
     });
 
