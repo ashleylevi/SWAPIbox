@@ -1,5 +1,3 @@
-// Dumping place for data cleaner methods
-
 export const getRandomFilm = filmArray => {
   const randomNumber = Math.floor(Math.random() * 6);
   return filmArray[randomNumber];
@@ -36,9 +34,32 @@ export const cleanVehicleData = async vehiclesArray => {
       name: vehicle.name,
       model: vehicle.model,
       class: vehicle.vehicle_class,
-      passengers: vehicle.passengers
-    }
-  })
+      passengers: vehicle.passengers,
+      isFavorite: false
+    };
+  });
   return Promise.all(vehicles);
-}
+};
 
+export const cleanPlanetsData = async planetsArray => {
+  const planets = await planetsArray.map(async planet => {
+    const { residents } = planet;
+    const promisedPeople = residents.map(async resident => {
+      const response = await fetch(resident);
+      console.log(response);
+      return response.json();
+    });
+
+    const resolvedResidents = await Promise.all(promisedPeople);
+
+    return {
+      name: planet.name,
+      terrain: planet.terrain,
+      population: planet.population,
+      climate: planet.climate,
+      residents: resolvedResidents,
+      isFavorite: false
+    };
+  });
+  return Promise.all(planets);
+};
