@@ -18,7 +18,7 @@
   opacity: .3;
   position: relative;
   z-index: 1;
-  top: 145px;
+  /* top: 145px; */
 }
 
 .main-title {
@@ -34,6 +34,7 @@
   animation: neon2 1.5s ease-in-out infinite alternate;
   position: relative;
   z-index: 2;
+  top: -140px;
 }
 
 @-webkit-keyframes neon2 {
