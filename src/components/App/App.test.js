@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { shallow, mount } from 'enzyme';
 
 import App from './App';
-import { mockData } from '../../mockData';
+import { mockData } from '../../helpers/mockData';
 
 describe('App', ()=> {
 
