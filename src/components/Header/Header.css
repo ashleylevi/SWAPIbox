@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'star';
+  font-style: normal;
+  font-weight: normal;
+  src: url(../../starjedi/Starjedi.ttf);
+}
+
 .header {
   display: flex;
   flex-direction: column;
@@ -7,31 +14,34 @@
   z-index: 3;
 }
 
-/* .header-pic {
+.header-pic {
+  opacity: .3;
   position: relative;
   z-index: 1;
-} */
+  /* top: 145px; */
+}
 
-h1 {
+.main-title {
   font-size: 50px;
   letter-spacing: 10px;
   -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;
   transition: all 0.5s;
-  color: #228DFF;
-  font-family: 'jedifont';
+  color: #feda4a;
+  font-family: 'star';
   -webkit-animation: neon2 1.5s ease-in-out infinite alternate;
   -moz-animation: neon2 1.5s ease-in-out infinite alternate;
   animation: neon2 1.5s ease-in-out infinite alternate;
   position: relative;
   z-index: 2;
+  top: -140px;
 }
 
 @-webkit-keyframes neon2 {
   from {
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #228DFF, 0 0 70px #228DFF, 0 0 80px #228DFF, 0 0 100px #228DFF, 0 0 150px #228DFF;
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #feda4a, 0 0 70px #feda4a, 0 0 80px #feda4a, 0 0 100px #feda4a, 0 0 150px #feda4a;
   }
   to {
-    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #228DFF, 0 0 35px #228DFF, 0 0 40px #228DFF, 0 0 50px #228DFF, 0 0 75px #228DFF;
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #feda4a, 0 0 35px #feda4a, 0 0 40px #feda4a, 0 0 50px #feda4a, 0 0 75px #feda4a;
   }
 }

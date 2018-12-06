@@ -1,15 +1,15 @@
-@font-face {
+/* @font-face {
   font-family: 'jedifont';
   font-style: normal;
   font-weight: normal;
   src: url(../../star_jedi/starjedi/Starjedi.ttf);
-}
+} */
 
 body {
-  background-image: url('https://farm5.staticflickr.com/4832/31245585687_121cb2c2ef_h.jpg');
+  background-image: url("https://farm5.staticflickr.com/4826/45285658055_3a04d41fcc.jpg");
   background-size: 80%;
   background-position: center;
   background-attachment: fixed;
-
-  font-family: 'jedifont';
+/* 
+  font-family: 'jedifont'; */
 }
