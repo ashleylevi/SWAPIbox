@@ -16,31 +16,49 @@ class App extends Component {
       films: [],
       filmCount: '',
       currentFilm: {},
-      people: [],
-      vehicles: [],
-      planets: [],
-      errorStatus: false
+      // people: [],
+      // vehicles: [],
+      // planets: [],
+      errorStatus: false,
+      displayData: []
     };
   }
 
-  async componentDidMount() {
+  async componentDidMount(buttonName) {
     //include try...catch... blocks
     //change to make calls only when needed
     try {
       const films = await API.fetchFilms();
       this.loadFilmData(films.results);
 
-      const people = await API.fetchPeople();
-      await this.loadPeopleData(people.results);
+      // const people = await API.fetchPeople();
+      // await this.loadPeopleData(people.results);
 
-      const vehicles = await API.fetchVehicles();
-      await this.loadVehicleData(vehicles.results);
+      // const vehicles = await API.fetchVehicles();
+      // await this.loadVehicleData(vehicles.results);
 
-      const planets = await API.fetchPlanets();
-      await this.loadPlanetData(planets.results);
+      // const planets = await API.fetchPlanets();
+      // await this.loadPlanetData(planets.results);
     } catch (err) {
       console.log(err.message);
     }
+  }
+
+  fetchData = async (e) => {
+    console.log('is running')
+    if (e.target.name === 'people') {
+      console.log('event', e.target)
+      console.log('people pressed')
+      const people = await API.fetchPeople();
+      this.loadPeopleData(people.results);
+    } else if (e.target.name === 'planets') {
+      const planets = await API.fetchPlanets();
+      this.loadPlanetData(planets.results);
+    } else if (e.target.name === 'vehicles') {
+      const vehicles = await API.fetchVehicles();
+      this.loadVehicleData(vehicles.results);
+    }
+
   }
 
   loadFilmData = filmsArray => {
@@ -53,23 +71,23 @@ class App extends Component {
   };
 
   loadPeopleData = async peopleArray => {
-    const people = await Helper.cleanPeopleData(peopleArray);
+    const displayData = await Helper.cleanPeopleData(peopleArray);
     this.setState({
-      people
+      displayData
     });
   };
 
   loadVehicleData = async vehiclesArray => {
-    const vehicles = await Helper.cleanVehicleData(vehiclesArray);
+    const displayData = await Helper.cleanVehicleData(vehiclesArray);
     this.setState({
-      vehicles
+      displayData
     });
   };
 
   loadPlanetData = async planetsArray => {
-    const planets = await Helper.cleanPlanetsData(planetsArray);
+    const displayData = await Helper.cleanPlanetsData(planetsArray);
     this.setState({
-      planets
+      displayData
     });
   };
 
@@ -78,7 +96,7 @@ class App extends Component {
     return (
       <div>
         <Header />
-        <Nav />
+        <Nav fetchData={this.fetchData} />
         <ScrollingText {...currentFilm} />
       </div>
     );
