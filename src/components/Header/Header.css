@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'star';
+  font-style: normal;
+  font-weight: normal;
+  src: url(../../starjedi/Starjedi.ttf);
+}
+
 .header {
   display: flex;
   flex-direction: column;
@@ -7,10 +14,12 @@
   z-index: 3;
 }
 
-/* .header-pic {
+.header-pic {
+  opacity: .3;
   position: relative;
   z-index: 1;
-} */
+  top: 145px;
+}
 
 .main-title {
   font-size: 50px;
@@ -19,7 +28,7 @@
   -moz-transition: all 0.5s;
   transition: all 0.5s;
   color: #feda4a;
-  font-family: 'jedifont';
+  font-family: 'star';
   -webkit-animation: neon2 1.5s ease-in-out infinite alternate;
   -moz-animation: neon2 1.5s ease-in-out infinite alternate;
   animation: neon2 1.5s ease-in-out infinite alternate;
