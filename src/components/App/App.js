@@ -17,7 +17,8 @@ class App extends Component {
       filmCount: '',
       currentFilm: {},
       people: [],
-      vehicles: []
+      vehicles: [],
+      planets: []
     };
   }
 
@@ -29,7 +30,10 @@ class App extends Component {
     await this.loadPeopleData(people.results);
 
     const vehicles = await API.fetchVehicles();
-    await this.loadVehicleData(vehicles.results)
+    await this.loadVehicleData(vehicles.results);
+
+    const planets = await API.fetchPlanets();
+    await this.loadPlanetData(planets.results);
   }
 
   loadFilmData = filmsArray => {
@@ -52,8 +56,15 @@ class App extends Component {
     const vehicles = await Helper.cleanVehicleData(vehiclesArray);
     this.setState({
       vehicles
-    })
-  }
+    });
+  };
+
+  loadPlanetData = async planetsArray => {
+    const planets = await Helper.cleanPlanetsData(planetsArray);
+    this.setState({
+      planets
+    });
+  };
 
   render() {
     const { currentFilm } = this.state;
