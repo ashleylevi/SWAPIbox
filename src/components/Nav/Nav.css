@@ -1,3 +1,13 @@
+@font-face {
+  font-family: 'mono';
+  font-style: normal;
+  font-weight: normal;
+  src: url(../../anakin_mono/anakinmono.ttf);
+}
+
+/* blue color */
+/* color: #228DFF; */
+
 .nav {
   height: 40px;
   display: flex;
@@ -9,21 +19,21 @@
   margin: 0 auto;
   position: relative;
   z-index: 2;
-  background-color:#228DFF;
+  background-color: #feda4a;
   border-radius: 20px;
-  /* border-bottom-right-radius: 20%; */
 }
 
 button {
+  font-family: 'mono';
+  padding-top: 5px;
+  font-size: 17px;
   width: 150px;
   height: 40px;
-  color: #228DFF;
-  font-family: 'Pathway Gothic One', sans-serif;
-  font-size: 1.6rem;
+  color:#eabc01;
   font-weight: 600;
-  background-color: #228DFF;
-  border-left: 2px solid #0775ea;
-  border-right: 2px solid #0775ea;
+  background-color: #feda4a;
+  border-left: 2px solid #eabc01;
+  border-right: 2px solid #eabc01;
   border-top: none;
   border-bottom: none;
   -webkit-animation: neon2 1.5s ease-in-out infinite alternate;
@@ -32,83 +42,16 @@ button {
 }
 
 button:hover {
-  color:#feda4a;
+  color: #feda4a;
   cursor: pointer;
 
 }
 
 @-webkit-keyframes neon2 {
   from {
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #228DFF, 0 0 70px #228DFF, 0 0 80px #228DFF, 0 0 100px #228DFF, 0 0 150px #228DFF;
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #feda4a, 0 0 70px #feda4a, 0 0 80px #feda4a, 0 0 100px #feda4a, 0 0 150px #feda4a;
   }
   to {
-    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #228DFF, 0 0 35px #228DFF, 0 0 40px #228DFF, 0 0 50px #228DFF, 0 0 75px #228DFF;
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #feda4a, 0 0 35px #feda4a, 0 0 40px #feda4a, 0 0 50px #feda4a, 0 0 75px #feda4a;
   }
 }
-
-/* button { */
-  /* -moz-box-shadow: 0px 1px 0px 0px #bea64f;
-  -webkit-box-shadow: 0px 1px 0px 0px #bea64f;
-  box-shadow: 0px 1px 0px 0px #bea64f;
-  background: -webkit-gradient(
-    linear,
-    left top,
-    left bottom,
-    color-stop(0.05, #ffec64),
-    color-stop(1, #fada65)
-  );
-  background: -moz-linear-gradient(top, #ffec64 5%, #fada65 100%);
-  background: -webkit-linear-gradient(top, #ffec64 5%, #fada65 100%);
-  background: -o-linear-gradient(top, #ffec64 5%, #fada65 100%);
-  background: -ms-linear-gradient(top, #ffec64 5%, #fada65 100%);
-  background: linear-gradient(to bottom, #ffec64 5%, #fada65 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffec64', endColorstr='#fada65',GradientType=0);
-  background-color: #ffec64;
-  -moz-border-radius: 6px;
-  -webkit-border-radius: 6px;
-  border-radius: 6px;
-  border: 1px solid #fada65;
-  display: inline-block;
-  cursor: pointer;
-  color: #333333;
-  font-family: Arial;
-  font-size: 15px;
-  font-weight: bold;
-  padding: 6px 24px;
-  text-decoration: none;
-  text-shadow: 0px 1px 0px #ffee66; */
-/* } */
-/* button:hover {
-  background: -webkit-gradient(
-    linear,
-    left top,
-    left bottom,
-    color-stop(0.05, #fada65),
-    color-stop(1, #ffec64)
-  );
-  background: -moz-linear-gradient(top, #fada65 5%, #ffec64 100%);
-  background: -webkit-linear-gradient(top, #fada65 5%, #ffec64 100%);
-  background: -o-linear-gradient(top, #fada65 5%, #ffec64 100%);
-  background: -ms-linear-gradient(top, #fada65 5%, #ffec64 100%);
-  background: linear-gradient(to bottom, #fada65 5%, #ffec64 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fada65', endColorstr='#ffec64',GradientType=0);
-  background-color: #fada65;
-}
-button: {
-  position: relative;
-  top: 1px;
-} */
-
-/* .background-fade {
-  height: 200px;
-  display: flex;
-  flex-basis: 100%;
-  background-image: linear-gradient(
-    rgba(0, 0, 0, 0.959),
-    rgba(0, 0, 0, 0.87),
-    rgba(0, 0, 0, 0.76),
-    transparent 70%
-  );
-  position: relative;
-  z-index: 4;
-} */
