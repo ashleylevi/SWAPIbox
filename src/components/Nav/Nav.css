@@ -18,13 +18,16 @@
   width: 80%;
   margin: 0 auto;
   position: relative;
-  z-index: 2;
+  z-index: 10;
   background-color: #feda4a;
   border-radius: 20px;
   top: -145px;
+
+
 }
 
 button {
+  z-index:2;
   font-family: 'mono';
   /* font-family: 'Pathway Gothic One', sans-serif; */
   padding-top: 7px;

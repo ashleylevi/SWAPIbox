@@ -4,7 +4,7 @@ export const getRandomFilm = filmArray => {
 };
 
 export const cleanPeopleData = async peopleArray => {
-  const people = await peopleArray.map(async person => {
+  const people = peopleArray.map(async person => {
     const { homeworld, species } = person;
 
     const fetches = [fetch(homeworld), fetch(species)];
