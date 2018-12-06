@@ -24,17 +24,23 @@ class App extends Component {
   }
 
   async componentDidMount() {
-    const films = await API.fetchFilms();
-    this.loadFilmData(films.results);
+    //include try...catch... blocks
+    //change to make calls only when needed
+    try {
+      const films = await API.fetchFilms();
+      this.loadFilmData(films.results);
 
-    const people = await API.fetchPeople();
-    await this.loadPeopleData(people.results);
+      const people = await API.fetchPeople();
+      await this.loadPeopleData(people.results);
 
-    const vehicles = await API.fetchVehicles();
-    await this.loadVehicleData(vehicles.results);
+      const vehicles = await API.fetchVehicles();
+      await this.loadVehicleData(vehicles.results);
 
-    const planets = await API.fetchPlanets();
-    await this.loadPlanetData(planets.results);
+      const planets = await API.fetchPlanets();
+      await this.loadPlanetData(planets.results);
+    } catch (err) {
+      console.log(err.message);
+    }
   }
 
   loadFilmData = filmsArray => {
@@ -80,3 +86,5 @@ class App extends Component {
 }
 
 export default App;
+
+//Test for inputs, test for state being set and test for error status
