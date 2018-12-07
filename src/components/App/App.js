@@ -22,7 +22,7 @@ class App extends Component {
       currentFilm: {},
       errorStatus: false,
       displayData: [],
-      storedCards: []
+      favoriteCards: []
     };
   }
 
@@ -125,26 +125,35 @@ class App extends Component {
     });
   };
 
-  storeCard = (id) => {
-
+  storeCard = (card) => {
+    const id = card.name
+    if (!localStorage.hasOwnProperty(id)) {
+      localStorage.setItem(id, JSON.stringify(card))
+    }
+    const faveCards = this.state.favoriteCards
+    this.setState({
+      favoriteCards: [card, ...faveCards]
+    })
   }
 
+
+
   render() {
-    const { currentFilm, displayData } = this.state;
+    const { currentFilm, displayData, favoriteCards } = this.state;
 
     if (displayData.length > 0) {
       return (
         <div>
           <Header />
           <Nav fetchData={this.fetchData} />
-          <CardContainer displayData={displayData} />
+          <CardContainer displayData={displayData} storeCard={this.storeCard} />
         </div>
       );
     } else {
       return (
         <div>
           <Header />
-          <Nav fetchData={this.fetchData} />
+          <Nav fetchData={this.fetchData} favoriteCards={favoriteCards} />
           <ScrollingText {...currentFilm} />
         </div>
       );
