@@ -18,7 +18,8 @@ class App extends Component {
       filmCount: '',
       currentFilm: {},
       errorStatus: false,
-      displayData: []
+      displayData: [],
+      storedCards: []
     };
   }
 
@@ -85,6 +86,10 @@ class App extends Component {
       displayData
     });
   };
+
+  storeCard = (id) => {
+
+  }
 
   render() {
     const { currentFilm, displayData } = this.state;

@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './Card.css';
+
 export const Card = ({ cardData }) => {
   const keys = Object.keys(cardData);
   const listItems = keys.map(listItem => {
@@ -25,10 +27,9 @@ export const Card = ({ cardData }) => {
   });
 
   return (
-    <div>
-      <h1 className="temp">CARD</h1>
+    <div className="card">
+    <button>Favorite?</button>
       <ul className="temp">{listItems}</ul>
-      <button>Favorite?</button>
     </div>
   );
 };
