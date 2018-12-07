@@ -5,6 +5,7 @@ import './App.css';
 import { ScrollingText } from '../ScrollingText/ScrollingText';
 import { Nav } from '../Nav/Nav';
 import { Header } from '../Header/Header';
+import { CardContainer } from '../CardContainer/CardContainer';
 
 import * as API from '../../helpers/apiCalls';
 import * as Helper from '../../helpers/Helper';
@@ -16,50 +17,44 @@ class App extends Component {
       films: [],
       filmCount: '',
       currentFilm: {},
-      // people: [],
-      // vehicles: [],
-      // planets: [],
       errorStatus: false,
       displayData: []
     };
   }
 
   async componentDidMount(buttonName) {
-    //include try...catch... blocks
-    //change to make calls only when needed
     try {
       const films = await API.fetchFilms();
       this.loadFilmData(films.results);
-
-      // const people = await API.fetchPeople();
-      // await this.loadPeopleData(people.results);
-
-      // const vehicles = await API.fetchVehicles();
-      // await this.loadVehicleData(vehicles.results);
-
-      // const planets = await API.fetchPlanets();
-      // await this.loadPlanetData(planets.results);
     } catch (err) {
       console.log(err.message);
     }
   }
 
-  fetchData = async (e) => {
-    console.log('is running')
+  fetchData = async e => {
     if (e.target.name === 'people') {
-      console.log('event', e.target)
-      console.log('people pressed')
-      const people = await API.fetchPeople();
-      this.loadPeopleData(people.results);
+      try {
+        const people = await API.fetchPeople();
+        this.loadPeopleData(people.results);
+      } catch (err) {
+        console.log(err.message);
+      }
     } else if (e.target.name === 'planets') {
-      const planets = await API.fetchPlanets();
-      this.loadPlanetData(planets.results);
+      try {
+        const planets = await API.fetchPlanets();
+        this.loadPlanetData(planets.results);
+      } catch (err) {
+        console.log(err.message);
+      }
     } else if (e.target.name === 'vehicles') {
-      const vehicles = await API.fetchVehicles();
-      this.loadVehicleData(vehicles.results);
+      try {
+        const vehicles = await API.fetchVehicles();
+        this.loadVehicleData(vehicles.results);
+      } catch (err) {
+        console.log(err.message);
+      }
     }
-
-  }
+  };
 
   loadFilmData = filmsArray => {
     const currentFilm = Helper.getRandomFilm(filmsArray);
@@ -92,14 +87,25 @@ class App extends Component {
   };
 
   render() {
-    const { currentFilm } = this.state;
-    return (
-      <div>
-        <Header />
-        <Nav fetchData={this.fetchData} />
-        <ScrollingText {...currentFilm} />
-      </div>
-    );
+    const { currentFilm, displayData } = this.state;
+
+    if (displayData.length > 0) {
+      return (
+        <div>
+          <Header />
+          <Nav fetchData={this.fetchData} />
+          <CardContainer displayData={displayData} />
+        </div>
+      );
+    } else {
+      return (
+        <div>
+          <Header />
+          <Nav fetchData={this.fetchData} />
+          <ScrollingText {...currentFilm} />
+        </div>
+      );
+    }
   }
 }
 
