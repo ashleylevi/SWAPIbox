@@ -19,7 +19,9 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         <Header />,
-        <Nav />,
+        <Nav
+          fetchData={[Function]}
+        />,
         <ScrollingText />,
       ],
     },
@@ -38,7 +40,9 @@ ShallowWrapper {
         "instance": null,
         "key": undefined,
         "nodeType": "function",
-        "props": Object {},
+        "props": Object {
+          "fetchData": [Function],
+        },
         "ref": null,
         "rendered": null,
         "type": [Function],
@@ -63,7 +67,9 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <Header />,
-          <Nav />,
+          <Nav
+            fetchData={[Function]}
+          />,
           <ScrollingText />,
         ],
       },
@@ -82,7 +88,9 @@ ShallowWrapper {
           "instance": null,
           "key": undefined,
           "nodeType": "function",
-          "props": Object {},
+          "props": Object {
+            "fetchData": [Function],
+          },
           "ref": null,
           "rendered": null,
           "type": [Function],
