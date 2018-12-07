@@ -1,8 +1,10 @@
 import React from 'react';
 
 import './Card.css';
+// import { prependOnceListener } from 'cluster';
 
-export const Card = ({ cardData }) => {
+export const Card = ({ cardData, storeCard }) => {
+  const card = cardData
   const keys = Object.keys(cardData);
   const listItems = keys.map(listItem => {
     if (listItem === 'residents') {
@@ -28,7 +30,7 @@ export const Card = ({ cardData }) => {
 
   return (
     <div className="card">
-    <button>Favorite?</button>
+    <button onClick={() => storeCard(card)}>Favorite?</button>
       <ul className="temp">{listItems}</ul>
     </div>
   );

@@ -3,10 +3,9 @@ import React from 'react';
 import { Card } from '../Card/Card';
 import './CardContainer.css';
 
-export const CardContainer = ({ displayData }) => {
+export const CardContainer = ({ displayData, storeCard }) => {
   const displayCards = displayData.map((card) => {
-    // const id = Date.now();
-    return <Card cardData={card} key={card.name}/>;
+    return <Card cardData={card} key={card.name} id={card.name} storeCard={storeCard}/>;
   });
   return (
     <div className="card-container">
