@@ -15,9 +15,10 @@
 }
 
 .header-pic {
-  opacity: .3;
+  opacity: .7;
   position: relative;
   z-index: 1;
+  width: 500px;
   /* top: 145px; */
 }
 
