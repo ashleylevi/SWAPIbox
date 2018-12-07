@@ -1,3 +1,13 @@
 .temp {
   color: red;
 }
+
+.card {
+  border: 2px solid #feda4a;
+  min-height: 300px;
+}
+
+ul {
+  list-style-type: none;
+  text-align: center;
+}
