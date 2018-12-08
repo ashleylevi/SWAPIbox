@@ -9,6 +9,7 @@ import { CardContainer } from '../CardContainer/CardContainer';
 
 import * as API from '../../helpers/apiCalls';
 import * as Helper from '../../helpers/Helper';
+import { Card } from '../Card/Card';
 
 class App extends Component {
   constructor() {
@@ -52,6 +53,7 @@ class App extends Component {
       try {
         const people = await API.fetchPeople();
         this.loadPeopleData(people.results);
+        await this.storeArrayData(this.state.people)
       } catch (err) {
         console.log(err.message);
       }
@@ -133,16 +135,33 @@ class App extends Component {
     });
   };
 
-  storeCard = card => {
+  storeArrayData = async (array) => {
+    console.log(array)
+
+  }
+
+  storeCard = (card) => {
     const id = card.name;
+    // this.toggleFavorite(card);
     if (!localStorage.hasOwnProperty(id)) {
       localStorage.setItem(id, JSON.stringify(card));
     }
     const faveCards = this.state.favoriteCards;
-    this.setState({
-      favoriteCards: [card, ...faveCards]
-    });
+    if (!faveCards.includes(card)) {
+      this.setState({
+        favoriteCards: [card, ...faveCards]
+      });
+    }
   };
+
+  // toggleFavorite = (card) => {
+  //   if (card.isFavorite === false) {
+  //     card.isFavorite = true
+  //   } else {
+  //     card.isFavorite = false
+  //   }
+  // }
+
 
   getStoredCards = () => {
     const keys = Object.values(localStorage);
