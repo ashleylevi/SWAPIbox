@@ -20,7 +20,7 @@ export const cleanPeopleData = async peopleArray => {
     return {
       name: person.name,
       homeworld: homeworldObj.name,
-      homePop: homeworldObj.population,
+      population: homeworldObj.population,
       species: speciesObj.name,
       isFavorite: false
     };

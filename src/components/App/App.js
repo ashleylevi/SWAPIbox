@@ -33,20 +33,21 @@ class App extends Component {
     } catch (err) {
       console.log(err.message);
     }
+    this.getStoredCards();
   }
 
   fetchData = async e => {
     const { people, planets, vehicles } = this.state;
     if (e.target.name === 'people') {
-      this.setPeopleData(people)
+      this.setPeopleData(people);
     } else if (e.target.name === 'planets') {
-      this.setPlanetsData(planets)
+      this.setPlanetsData(planets);
     } else if (e.target.name === 'vehicles') {
-      this.setVehicleData(vehicles)
+      this.setVehicleData(vehicles);
     }
   };
 
-  setPeopleData = async (peopleArray) => {
+  setPeopleData = async peopleArray => {
     if (peopleArray.length === 0) {
       try {
         const people = await API.fetchPeople();
@@ -57,26 +58,26 @@ class App extends Component {
     } else {
       this.setState({
         displayData: peopleArray
-      })
+      });
     }
-  }
+  };
 
-  setPlanetsData = async (planetsArray) => {
+  setPlanetsData = async planetsArray => {
     if (planetsArray.length === 0) {
       try {
         const planets = await API.fetchPlanets();
         this.loadPlanetData(planets.results);
       } catch (err) {
         console.log(err.message);
-        } 
-      } else {
-        this.setState({
-          displayData: planetsArray
-        })
+      }
+    } else {
+      this.setState({
+        displayData: planetsArray
+      });
     }
-  }
+  };
 
-  setVehicleData = async (vehicleArray) => {
+  setVehicleData = async vehicleArray => {
     if (vehicleArray.length === 0) {
       try {
         const vehicles = await API.fetchVehicles();
@@ -87,10 +88,18 @@ class App extends Component {
     } else {
       this.setState({
         displayData: vehicleArray
-      })
+      });
     }
-  }
- 
+  };
+
+  setFavoriteData = () => {
+    const { displayData, favoriteCards } = this.state;
+    this.setState({
+      displayData: favoriteCards
+    });
+    console.log('working');
+  };
+
   loadFilmData = filmsArray => {
     const currentFilm = Helper.getRandomFilm(filmsArray);
     this.setState({
@@ -121,31 +130,48 @@ class App extends Component {
     this.setState({
       displayData,
       planets: displayData
-
     });
   };
 
-  storeCard = (card) => {
-    const id = card.name
+  storeCard = card => {
+    const id = card.name;
     if (!localStorage.hasOwnProperty(id)) {
-      localStorage.setItem(id, JSON.stringify(card))
+      localStorage.setItem(id, JSON.stringify(card));
     }
-    const faveCards = this.state.favoriteCards
+    const faveCards = this.state.favoriteCards;
     this.setState({
       favoriteCards: [card, ...faveCards]
-    })
-  }
+    });
+  };
 
-
+  getStoredCards = () => {
+    const keys = Object.values(localStorage);
+    const favoriteCards = keys.map(card => {
+      const parsedCard = JSON.parse(card);
+      return parsedCard;
+    });
+    this.setState({
+      favoriteCards
+    });
+  };
 
   render() {
-    const { currentFilm, displayData, favoriteCards } = this.state;
+    const {
+      currentFilm,
+      displayData,
+      favoriteCards,
+      setFavoriteData
+    } = this.state;
 
     if (displayData.length > 0) {
       return (
         <div>
           <Header />
-          <Nav fetchData={this.fetchData} />
+          <Nav
+            fetchData={this.fetchData}
+            favoriteCards={favoriteCards}
+            setFavoriteData={this.setFavoriteData}
+          />
           <CardContainer displayData={displayData} storeCard={this.storeCard} />
         </div>
       );
@@ -153,7 +179,11 @@ class App extends Component {
       return (
         <div>
           <Header />
-          <Nav fetchData={this.fetchData} favoriteCards={favoriteCards} />
+          <Nav
+            fetchData={this.fetchData}
+            favoriteCards={favoriteCards}
+            setFavoriteData={this.setFavoriteData}
+          />
           <ScrollingText {...currentFilm} />
         </div>
       );
@@ -162,3 +192,6 @@ class App extends Component {
 }
 
 export default App;
+
+//ADD LIGHTSABER FOR NAV
+//ADD DARTH VADER SOUNDS
