@@ -175,8 +175,12 @@ describe('App', () => {
       expect(wrapper.state('planets')[1]).toEqual(expected2);
     });
   });
-});
 
-describe('', () => {
-  it('', () => {});
+  describe('toggleFavorite', () => {
+    it('', () => {});
+  });
+
+  describe('displayFavorites', () => {
+    it('', () => {});
+  });
 });
