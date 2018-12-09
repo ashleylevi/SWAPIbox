@@ -2,11 +2,7 @@ import React from 'react';
 import './Nav.css';
 // import { prependOnceListener } from 'cluster';
 
-export const Nav = ({ fetchData, favoriteCards, setFavoriteData }) => {
-  let favorite;
-  favoriteCards.length === 0
-    ? (favorite = 0)
-    : (favorite = favoriteCards.length);
+export const Nav = ({ fetchData, displayFavorites }) => {
   return (
     <div>
       <section className="nav">
@@ -19,7 +15,9 @@ export const Nav = ({ fetchData, favoriteCards, setFavoriteData }) => {
         <button name="vehicles" onClick={fetchData}>
           VEHICLES
         </button>
-        <button onClick={setFavoriteData}>FAVORTIES: {favorite}</button>
+        <button name="favorites" onClick={displayFavorites}>
+          FAVORTIES
+        </button>
       </section>
       <section className="background-fade" />
     </div>
