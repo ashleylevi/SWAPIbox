@@ -1,0 +1,425 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card should match the snapshot with all data passed in correctly 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Card
+    cardData={
+      Object {
+        "category": "people",
+        "homeworld": "Tatooine",
+        "isFavorite": false,
+        "name": "Luke Skywalker",
+        "population": "200000",
+        "species": "Human",
+      }
+    }
+    toggleFavorite={[MockFunction]}
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <button
+          onClick={[Function]}
+        >
+          favorite
+        </button>,
+        <ul
+          className="temp"
+        >
+          <li
+            className="temp"
+          >
+            name
+            : 
+            Luke Skywalker
+          </li>
+          <li
+            className="temp"
+          >
+            homeworld
+            : 
+            Tatooine
+          </li>
+          <li
+            className="temp"
+          >
+            population
+            : 
+            200000
+          </li>
+          <li
+            className="temp"
+          >
+            species
+            : 
+            Human
+          </li>
+        </ul>,
+      ],
+      "className": "card",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "favorite",
+          "onClick": [Function],
+        },
+        "ref": null,
+        "rendered": "favorite",
+        "type": "button",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <li
+              className="temp"
+            >
+              name
+              : 
+              Luke Skywalker
+            </li>,
+            <li
+              className="temp"
+            >
+              homeworld
+              : 
+              Tatooine
+            </li>,
+            <li
+              className="temp"
+            >
+              population
+              : 
+              200000
+            </li>,
+            <li
+              className="temp"
+            >
+              species
+              : 
+              Human
+            </li>,
+            undefined,
+            undefined,
+          ],
+          "className": "temp",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                "name",
+                ": ",
+                "Luke Skywalker",
+              ],
+              "className": "temp",
+            },
+            "ref": null,
+            "rendered": Array [
+              "name",
+              ": ",
+              "Luke Skywalker",
+            ],
+            "type": "li",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                "homeworld",
+                ": ",
+                "Tatooine",
+              ],
+              "className": "temp",
+            },
+            "ref": null,
+            "rendered": Array [
+              "homeworld",
+              ": ",
+              "Tatooine",
+            ],
+            "type": "li",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                "population",
+                ": ",
+                "200000",
+              ],
+              "className": "temp",
+            },
+            "ref": null,
+            "rendered": Array [
+              "population",
+              ": ",
+              "200000",
+            ],
+            "type": "li",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                "species",
+                ": ",
+                "Human",
+              ],
+              "className": "temp",
+            },
+            "ref": null,
+            "rendered": Array [
+              "species",
+              ": ",
+              "Human",
+            ],
+            "type": "li",
+          },
+          undefined,
+          undefined,
+        ],
+        "type": "ul",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <button
+            onClick={[Function]}
+          >
+            favorite
+          </button>,
+          <ul
+            className="temp"
+          >
+            <li
+              className="temp"
+            >
+              name
+              : 
+              Luke Skywalker
+            </li>
+            <li
+              className="temp"
+            >
+              homeworld
+              : 
+              Tatooine
+            </li>
+            <li
+              className="temp"
+            >
+              population
+              : 
+              200000
+            </li>
+            <li
+              className="temp"
+            >
+              species
+              : 
+              Human
+            </li>
+          </ul>,
+        ],
+        "className": "card",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "favorite",
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": "favorite",
+          "type": "button",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <li
+                className="temp"
+              >
+                name
+                : 
+                Luke Skywalker
+              </li>,
+              <li
+                className="temp"
+              >
+                homeworld
+                : 
+                Tatooine
+              </li>,
+              <li
+                className="temp"
+              >
+                population
+                : 
+                200000
+              </li>,
+              <li
+                className="temp"
+              >
+                species
+                : 
+                Human
+              </li>,
+              undefined,
+              undefined,
+            ],
+            "className": "temp",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  "name",
+                  ": ",
+                  "Luke Skywalker",
+                ],
+                "className": "temp",
+              },
+              "ref": null,
+              "rendered": Array [
+                "name",
+                ": ",
+                "Luke Skywalker",
+              ],
+              "type": "li",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  "homeworld",
+                  ": ",
+                  "Tatooine",
+                ],
+                "className": "temp",
+              },
+              "ref": null,
+              "rendered": Array [
+                "homeworld",
+                ": ",
+                "Tatooine",
+              ],
+              "type": "li",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  "population",
+                  ": ",
+                  "200000",
+                ],
+                "className": "temp",
+              },
+              "ref": null,
+              "rendered": Array [
+                "population",
+                ": ",
+                "200000",
+              ],
+              "type": "li",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  "species",
+                  ": ",
+                  "Human",
+                ],
+                "className": "temp",
+              },
+              "ref": null,
+              "rendered": Array [
+                "species",
+                ": ",
+                "Human",
+              ],
+              "type": "li",
+            },
+            undefined,
+            undefined,
+          ],
+          "type": "ul",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
+`;

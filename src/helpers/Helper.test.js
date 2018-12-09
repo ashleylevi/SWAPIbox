@@ -2,22 +2,128 @@ import * as Helper from './Helper';
 import { mockData } from './mockData';
 
 describe('Helper', () => {
+  describe('getRandomFilm', () => {
+    it('should return a random film', () => {
+      const mockFilms = mockData.films.results;
+      const expected = {
+        title: 'The Phantom Menace',
+        episode_id: 1,
+        opening_crawl:
+          'Turmoil has engulfed the\r\nGalactic Republic. The taxation\r\nof trade routes to outlying star\r\nsystems is in dispute.\r\n\r\nHoping to resolve the matter\r\nwith a blockade of deadly\r\nbattleships, the greedy Trade\r\nFederation has stopped all\r\nshipping to the small planet\r\nof Naboo.\r\n\r\nWhile the Congress of the\r\nRepublic endlessly debates\r\nthis alarming chain of events,\r\nthe Supreme Chancellor has\r\nsecretly dispatched two Jedi\r\nKnights, the guardians of\r\npeace and justice in the\r\ngalaxy, to settle the conflict....',
+        director: 'George Lucas',
+        producer: 'Rick McCallum',
+        release_date: '1999-05-19',
+        characters: [
+          'https://swapi.co/api/people/2/',
+          'https://swapi.co/api/people/3/',
+          'https://swapi.co/api/people/10/',
+          'https://swapi.co/api/people/11/',
+          'https://swapi.co/api/people/16/',
+          'https://swapi.co/api/people/20/',
+          'https://swapi.co/api/people/21/',
+          'https://swapi.co/api/people/32/',
+          'https://swapi.co/api/people/33/',
+          'https://swapi.co/api/people/34/',
+          'https://swapi.co/api/people/36/',
+          'https://swapi.co/api/people/37/',
+          'https://swapi.co/api/people/38/',
+          'https://swapi.co/api/people/39/',
+          'https://swapi.co/api/people/40/',
+          'https://swapi.co/api/people/41/',
+          'https://swapi.co/api/people/42/',
+          'https://swapi.co/api/people/43/',
+          'https://swapi.co/api/people/44/',
+          'https://swapi.co/api/people/46/',
+          'https://swapi.co/api/people/48/',
+          'https://swapi.co/api/people/49/',
+          'https://swapi.co/api/people/50/',
+          'https://swapi.co/api/people/51/',
+          'https://swapi.co/api/people/52/',
+          'https://swapi.co/api/people/53/',
+          'https://swapi.co/api/people/54/',
+          'https://swapi.co/api/people/55/',
+          'https://swapi.co/api/people/56/',
+          'https://swapi.co/api/people/57/',
+          'https://swapi.co/api/people/58/',
+          'https://swapi.co/api/people/59/',
+          'https://swapi.co/api/people/47/',
+          'https://swapi.co/api/people/35/'
+        ],
+        planets: [
+          'https://swapi.co/api/planets/8/',
+          'https://swapi.co/api/planets/9/',
+          'https://swapi.co/api/planets/1/'
+        ],
+        starships: [
+          'https://swapi.co/api/starships/40/',
+          'https://swapi.co/api/starships/41/',
+          'https://swapi.co/api/starships/31/',
+          'https://swapi.co/api/starships/32/',
+          'https://swapi.co/api/starships/39/'
+        ],
+        vehicles: [
+          'https://swapi.co/api/vehicles/33/',
+          'https://swapi.co/api/vehicles/34/',
+          'https://swapi.co/api/vehicles/35/',
+          'https://swapi.co/api/vehicles/36/',
+          'https://swapi.co/api/vehicles/37/',
+          'https://swapi.co/api/vehicles/38/',
+          'https://swapi.co/api/vehicles/42/'
+        ],
+        species: [
+          'https://swapi.co/api/species/1/',
+          'https://swapi.co/api/species/2/',
+          'https://swapi.co/api/species/6/',
+          'https://swapi.co/api/species/11/',
+          'https://swapi.co/api/species/12/',
+          'https://swapi.co/api/species/13/',
+          'https://swapi.co/api/species/14/',
+          'https://swapi.co/api/species/15/',
+          'https://swapi.co/api/species/16/',
+          'https://swapi.co/api/species/17/',
+          'https://swapi.co/api/species/18/',
+          'https://swapi.co/api/species/19/',
+          'https://swapi.co/api/species/20/',
+          'https://swapi.co/api/species/21/',
+          'https://swapi.co/api/species/22/',
+          'https://swapi.co/api/species/23/',
+          'https://swapi.co/api/species/24/',
+          'https://swapi.co/api/species/25/',
+          'https://swapi.co/api/species/26/',
+          'https://swapi.co/api/species/27/'
+        ],
+        created: '2014-12-19T16:52:55.740000Z',
+        edited: '2015-04-11T09:45:18.689301Z',
+        url: 'https://swapi.co/api/films/4/'
+      };
+
+      const randomFilm = Helper.getRandomFilm(mockFilms);
+      expect(randomFilm).toHaveProperty(
+        'title',
+        'opening_crawl',
+        'release_date'
+      );
+    });
+  });
+
   describe('cleanPeopleData', () => {
     it('should return an array of people', async () => {
       const mockPeople = mockData.people.results;
       const expectedPerson1 = {
         name: 'Luke Skywalker',
         homeworld: 'Tatooine',
-        homePop: '200000',
+        population: '200000',
         species: 'Human',
-        isFavorite: false
+        isFavorite: false,
+        category: 'people'
       };
       const expectedPerson2 = {
         name: 'C-3PO',
         homeworld: 'Tatooine',
-        homePop: '200000',
+        population: '200000',
         species: 'Droid',
-        isFavorite: false
+        isFavorite: false,
+        category: 'people'
       };
 
       const cleanPeople = await Helper.cleanPeopleData(mockPeople);
@@ -35,14 +141,16 @@ describe('Helper', () => {
         model: 'Digger Crawler',
         class: 'wheeled',
         passengers: '30',
-        isFavorite: false
+        isFavorite: false,
+        category: 'vehicles'
       };
       const expectedVehicle2 = {
         name: 'T-16 skyhopper',
         model: 'T-16 skyhopper',
         class: 'repulsorcraft',
         passengers: '1',
-        isFavorite: false
+        isFavorite: false,
+        category: 'vehicles'
       };
 
       const cleanVehicles = await Helper.cleanVehicleData(mockVehicles);
@@ -60,75 +168,9 @@ describe('Helper', () => {
         isFavorite: false,
         name: 'Alderaan',
         population: '2000000000',
-        residents: [
-          {
-            birth_year: '19BBY',
-            created: '2014-12-10T15:20:09.791000Z',
-            edited: '2014-12-20T21:17:50.315000Z',
-            eye_color: 'brown',
-            films: [
-              'https://swapi.co/api/films/2/',
-              'https://swapi.co/api/films/6/',
-              'https://swapi.co/api/films/3/',
-              'https://swapi.co/api/films/1/',
-              'https://swapi.co/api/films/7/'
-            ],
-            gender: 'female',
-            hair_color: 'brown',
-            height: '150',
-            homeworld: 'https://swapi.co/api/planets/2/',
-            mass: '49',
-            name: 'Leia Organa',
-            skin_color: 'light',
-            species: ['https://swapi.co/api/species/1/'],
-            starships: [],
-            url: 'https://swapi.co/api/people/5/',
-            vehicles: ['https://swapi.co/api/vehicles/30/']
-          },
-          {
-            birth_year: '67BBY',
-            created: '2014-12-20T16:53:08.575000Z',
-            edited: '2014-12-20T21:17:50.463000Z',
-            eye_color: 'brown',
-            films: [
-              'https://swapi.co/api/films/5/',
-              'https://swapi.co/api/films/6/'
-            ],
-            gender: 'male',
-            hair_color: 'black',
-            height: '191',
-            homeworld: 'https://swapi.co/api/planets/2/',
-            mass: 'unknown',
-            name: 'Bail Prestor Organa',
-            skin_color: 'tan',
-            species: ['https://swapi.co/api/species/1/'],
-            starships: [],
-            url: 'https://swapi.co/api/people/68/',
-            vehicles: []
-          },
-          {
-            birth_year: 'unknown',
-            created: '2014-12-20T19:49:35.583000Z',
-            edited: '2014-12-20T21:17:50.493000Z',
-            eye_color: 'brown',
-            films: [
-              'https://swapi.co/api/films/6/',
-              'https://swapi.co/api/films/1/'
-            ],
-            gender: 'male',
-            hair_color: 'brown',
-            height: '188',
-            homeworld: 'https://swapi.co/api/planets/2/',
-            mass: '79',
-            name: 'Raymus Antilles',
-            skin_color: 'light',
-            species: ['https://swapi.co/api/species/1/'],
-            starships: [],
-            url: 'https://swapi.co/api/people/81/',
-            vehicles: []
-          }
-        ],
-        terrain: 'grasslands, mountains'
+        residents: ['Leia Organa', 'Bail Prestor Organa', 'Raymus Antilles'],
+        terrain: 'grasslands, mountains',
+        category: 'planets'
       };
       const expectedPlanet2 = {
         climate: 'temperate, tropical',
@@ -136,7 +178,8 @@ describe('Helper', () => {
         name: 'Yavin IV',
         population: '1000',
         residents: [],
-        terrain: 'jungle, rainforests'
+        terrain: 'jungle, rainforests',
+        category: 'planets'
       };
       const cleanPlanets = await Helper.cleanPlanetsData(mockPlanets);
       expect(cleanPlanets[0]).toEqual(expectedPlanet1);

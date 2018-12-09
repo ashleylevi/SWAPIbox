@@ -2,7 +2,7 @@ import React from 'react';
 import './Nav.css';
 // import { prependOnceListener } from 'cluster';
 
-export const Nav = ({ fetchData, displayFavorites, cardCount }) => {
+export const Nav = ({ fetchData, cardCount }) => {
   return (
     <div>
       <section className="nav">

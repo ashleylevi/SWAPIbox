@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { shallow, mount } from 'enzyme';
+import React from 'react';
+import { shallow } from 'enzyme';
 
 import App from './App';
 import { mockData } from '../../helpers/mockData';

@@ -9,7 +9,6 @@ import { CardContainer } from '../CardContainer/CardContainer';
 
 import * as API from '../../helpers/apiCalls';
 import * as Helper from '../../helpers/Helper';
-import { EWOULDBLOCK } from 'constants';
 
 class App extends Component {
   constructor() {
@@ -37,6 +36,7 @@ class App extends Component {
         console.log(err.message);
       }
     }
+    console.log(this.state.people);
   }
 
   fetchData = async e => {
