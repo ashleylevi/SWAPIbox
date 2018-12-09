@@ -22,7 +22,8 @@ export const cleanPeopleData = async peopleArray => {
       homeworld: homeworldObj.name,
       population: homeworldObj.population,
       species: speciesObj.name,
-      isFavorite: false
+      isFavorite: false,
+      category: 'people'
     };
   });
   return Promise.all(people);
@@ -35,7 +36,8 @@ export const cleanVehicleData = async vehiclesArray => {
       model: vehicle.model,
       class: vehicle.vehicle_class,
       passengers: vehicle.passengers,
-      isFavorite: false
+      isFavorite: false,
+      category: 'vehicles'
     };
   });
   return Promise.all(vehicles);
@@ -58,7 +60,8 @@ export const cleanPlanetsData = async planetsArray => {
       population: planet.population,
       climate: planet.climate,
       residents: resolvedResidents,
-      isFavorite: false
+      isFavorite: false,
+      category: 'planets'
     };
   });
   return Promise.all(planets);

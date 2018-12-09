@@ -3,23 +3,8 @@ import React, { Component } from 'react';
 import './Card.css';
 
 class Card extends Component {
-  constructor(props) {
-    super()
-    this.state = {
-      isFavorite: false
-    }
-  }
-
-  // handleClick = (card) => {
-  //   this.props.storeCard(card)
-  //   this.setState({
-  //     isFavorite: isFavorite === !isFavorite
-  //   })
-
-  // }
-
   render() {
-    const { cardData, storeCard } = this.props;
+    const { cardData, toggleFavorite } = this.props;
     const card = cardData;
     const keys = Object.keys(cardData);
     const listItems = keys.map(listItem => {
@@ -35,7 +20,7 @@ class Card extends Component {
           return <li className="temp">{listItem}: none</li>;
         }
       }
-      if (listItem !== 'isFavorite') {
+      if (listItem !== 'isFavorite' && listItem !== 'category') {
         return (
           <li className="temp">
             {listItem}: {cardData[listItem]}
@@ -46,8 +31,9 @@ class Card extends Component {
 
     return (
       <div className="card">
-        <button onClick={() => this.handleClick(card)}>
-        {card.isFavorite ? "unfavorite" : "favorite"}</button>
+        <button onClick={() => toggleFavorite(card)}>
+          {!card.isFavorite ? 'favorite' : 'unfavorite'}
+        </button>
         <ul className="temp">{listItems}</ul>
       </div>
     );

@@ -9,7 +9,6 @@ import { CardContainer } from '../CardContainer/CardContainer';
 
 import * as API from '../../helpers/apiCalls';
 import * as Helper from '../../helpers/Helper';
-import { Card } from '../Card/Card';
 
 class App extends Component {
   constructor() {
@@ -22,19 +21,21 @@ class App extends Component {
       filmCount: '',
       currentFilm: {},
       errorStatus: false,
-      displayData: [],
-      favoriteCards: []
+      displayData: []
     };
   }
 
   async componentDidMount(buttonName) {
-    try {
-      const films = await API.fetchFilms();
-      this.loadFilmData(films.results);
-    } catch (err) {
-      console.log(err.message);
+    this.getStoredData();
+    const { films } = this.state;
+    if (films.length === 0) {
+      try {
+        const films = await API.fetchFilms();
+        this.loadFilmData(films.results);
+      } catch (err) {
+        console.log(err.message);
+      }
     }
-    this.getStoredCards();
   }
 
   fetchData = async e => {
@@ -53,7 +54,6 @@ class App extends Component {
       try {
         const people = await API.fetchPeople();
         this.loadPeopleData(people.results);
-        await this.storeArrayData(this.state.people)
       } catch (err) {
         console.log(err.message);
       }
@@ -94,16 +94,10 @@ class App extends Component {
     }
   };
 
-  setFavoriteData = () => {
-    const { displayData, favoriteCards } = this.state;
-    this.setState({
-      displayData: favoriteCards
-    });
-    console.log('working');
-  };
-
   loadFilmData = filmsArray => {
     const currentFilm = Helper.getRandomFilm(filmsArray);
+
+    this.storeArrayData(filmsArray, 'films');
     this.setState({
       films: filmsArray.results,
       filmCount: filmsArray.count,
@@ -113,6 +107,8 @@ class App extends Component {
 
   loadPeopleData = async peopleArray => {
     const displayData = await Helper.cleanPeopleData(peopleArray);
+
+    this.storeArrayData(displayData, 'people');
     this.setState({
       displayData,
       people: displayData
@@ -121,6 +117,8 @@ class App extends Component {
 
   loadVehicleData = async vehiclesArray => {
     const displayData = await Helper.cleanVehicleData(vehiclesArray);
+
+    this.storeArrayData(displayData, 'vehicles');
     this.setState({
       displayData,
       vehicles: displayData
@@ -129,58 +127,58 @@ class App extends Component {
 
   loadPlanetData = async planetsArray => {
     const displayData = await Helper.cleanPlanetsData(planetsArray);
+
+    this.storeArrayData(displayData, 'planets');
     this.setState({
       displayData,
       planets: displayData
     });
   };
 
-  storeArrayData = async (array) => {
-    console.log(array)
-
-  }
-
-  storeCard = (card) => {
-    const id = card.name;
-    // this.toggleFavorite(card);
-    if (!localStorage.hasOwnProperty(id)) {
-      localStorage.setItem(id, JSON.stringify(card));
-    }
-    const faveCards = this.state.favoriteCards;
-    if (!faveCards.includes(card)) {
-      this.setState({
-        favoriteCards: [card, ...faveCards]
-      });
-    }
+  storeArrayData = (array, key) => {
+    localStorage.setItem(key, JSON.stringify(array));
   };
 
-  // toggleFavorite = (card) => {
-  //   if (card.isFavorite === false) {
-  //     card.isFavorite = true
-  //   } else {
-  //     card.isFavorite = false
-  //   }
-  // }
-
-
-  getStoredCards = () => {
-    const keys = Object.values(localStorage);
-    const favoriteCards = keys.map(card => {
-      const parsedCard = JSON.parse(card);
-      return parsedCard;
+  getStoredData = () => {
+    const keys = Object.keys(localStorage);
+    keys.forEach(key => {
+      const array = localStorage.getItem(key);
+      const data = JSON.parse(array);
+      this.setState({
+        [key]: data
+      });
     });
+  };
+
+  toggleFavorite = card => {
+    const category = card.category;
+    const array = this.state[category].map(cardObject => {
+      if (cardObject.name === card.name) {
+        return { ...cardObject, isFavorite: !cardObject.isFavorite };
+      } else {
+        return cardObject;
+      }
+    });
+    this.storeArrayData(array, category);
     this.setState({
-      favoriteCards
+      [category]: array
+    });
+  };
+
+  displayFavorites = () => {
+    const { people, planets, vehicles } = this.state;
+    const favPeople = people.filter(person => person.isFavorite);
+    const favPlanets = planets.filter(planet => planet.isFavorite);
+    const favVehicles = vehicles.filter(vehicle => vehicle.isFavorite);
+
+    const displayData = [...favPeople, ...favPlanets, ...favVehicles];
+    this.setState({
+      displayData
     });
   };
 
   render() {
-    const {
-      currentFilm,
-      displayData,
-      favoriteCards,
-      setFavoriteData
-    } = this.state;
+    const { currentFilm, displayData } = this.state;
 
     if (displayData.length > 0) {
       return (
@@ -188,10 +186,12 @@ class App extends Component {
           <Header />
           <Nav
             fetchData={this.fetchData}
-            favoriteCards={favoriteCards}
-            setFavoriteData={this.setFavoriteData}
+            displayFavorites={this.displayFavorites}
           />
-          <CardContainer displayData={displayData} storeCard={this.storeCard} />
+          <CardContainer
+            displayData={displayData}
+            toggleFavorite={this.toggleFavorite}
+          />
         </div>
       );
     } else {
@@ -200,8 +200,7 @@ class App extends Component {
           <Header />
           <Nav
             fetchData={this.fetchData}
-            favoriteCards={favoriteCards}
-            setFavoriteData={this.setFavoriteData}
+            displayFavorites={this.displayFavorites}
           />
           <ScrollingText {...currentFilm} />
         </div>
