@@ -2,7 +2,7 @@ import React from 'react';
 import './Nav.css';
 // import { prependOnceListener } from 'cluster';
 
-export const Nav = ({ fetchData, displayFavorites }) => {
+export const Nav = ({ fetchData, displayFavorites, cardCount }) => {
   return (
     <div>
       <section className="nav">
@@ -15,8 +15,8 @@ export const Nav = ({ fetchData, displayFavorites }) => {
         <button name="vehicles" onClick={fetchData}>
           VEHICLES
         </button>
-        <button name="favorites" onClick={displayFavorites}>
-          FAVORTIES
+        <button name="favorites" onClick={fetchData}>
+          FAVORTIES: {cardCount}
         </button>
       </section>
       <section className="background-fade" />
