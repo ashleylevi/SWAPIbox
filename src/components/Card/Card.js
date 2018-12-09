@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import PropTypes from 'prop-types'
 import './Card.css';
 
 class Card extends Component {
@@ -38,6 +38,13 @@ class Card extends Component {
       </div>
     );
   }
+}
+
+Card.PropTypes = {
+  cardData: PropTypes.objectOf,
+  key: PropTypes.string,
+  id: PropTypes.string,
+  toggleFavorite: PropTypes.func
 }
 
 export default Card;

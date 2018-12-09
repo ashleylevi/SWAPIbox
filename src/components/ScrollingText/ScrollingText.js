@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './ScrollingText.css';
 
 export const ScrollingText = ({
@@ -23,3 +24,7 @@ export const ScrollingText = ({
     </div>
   );
 };
+
+ScrollingText.propTypes = {
+   currentFilm: PropTypes.objectOf
+}

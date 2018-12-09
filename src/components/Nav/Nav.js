@@ -1,6 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './Nav.css';
-// import { prependOnceListener } from 'cluster';
 
 export const Nav = ({ fetchData, cardCount }) => {
   return (
@@ -23,3 +23,9 @@ export const Nav = ({ fetchData, cardCount }) => {
     </div>
   );
 };
+
+Nav.propTypes = {
+  fetchData: PropTypes.func,
+  displayFavorites: PropTypes.func,
+  cardCount: PropTypes.arrayOf
+}
