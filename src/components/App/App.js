@@ -9,6 +9,7 @@ import { CardContainer } from '../CardContainer/CardContainer';
 
 import * as API from '../../helpers/apiCalls';
 import * as Helper from '../../helpers/Helper';
+import { EWOULDBLOCK } from 'constants';
 
 class App extends Component {
   constructor() {
@@ -21,7 +22,7 @@ class App extends Component {
       filmCount: '',
       currentFilm: {},
       errorStatus: false,
-      displayData: []
+      displayData: ''
     };
   }
 
@@ -46,6 +47,10 @@ class App extends Component {
       this.setPlanetsData(planets);
     } else if (e.target.name === 'vehicles') {
       this.setVehicleData(vehicles);
+    } else if (e.target.name === 'favorites') {
+      this.setState({
+        displayData: 'favorites'
+      });
     }
   };
 
@@ -59,7 +64,7 @@ class App extends Component {
       }
     } else {
       this.setState({
-        displayData: peopleArray
+        displayData: 'people'
       });
     }
   };
@@ -74,7 +79,7 @@ class App extends Component {
       }
     } else {
       this.setState({
-        displayData: planetsArray
+        displayData: 'planets'
       });
     }
   };
@@ -89,7 +94,7 @@ class App extends Component {
       }
     } else {
       this.setState({
-        displayData: vehicleArray
+        displayData: 'vehicles'
       });
     }
   };
@@ -110,7 +115,6 @@ class App extends Component {
 
     this.storeArrayData(displayData, 'people');
     this.setState({
-      displayData,
       people: displayData
     });
   };
@@ -120,7 +124,6 @@ class App extends Component {
 
     this.storeArrayData(displayData, 'vehicles');
     this.setState({
-      displayData,
       vehicles: displayData
     });
   };
@@ -130,7 +133,6 @@ class App extends Component {
 
     this.storeArrayData(displayData, 'planets');
     this.setState({
-      displayData,
       planets: displayData
     });
   };
@@ -171,14 +173,18 @@ class App extends Component {
     const favPlanets = planets.filter(planet => planet.isFavorite);
     const favVehicles = vehicles.filter(vehicle => vehicle.isFavorite);
 
-    const displayData = [...favPeople, ...favPlanets, ...favVehicles];
-    this.setState({
-      displayData
-    });
+    return [...favPeople, ...favPlanets, ...favVehicles];
   };
 
   render() {
     const { currentFilm, displayData } = this.state;
+    let data = [];
+    let favorites = this.displayFavorites();
+    if (displayData === 'favorites') {
+      data = favorites;
+    } else {
+      data = this.state[displayData];
+    }
 
     if (displayData.length > 0) {
       return (
@@ -187,9 +193,10 @@ class App extends Component {
           <Nav
             fetchData={this.fetchData}
             displayFavorites={this.displayFavorites}
+            cardCount={favorites.length}
           />
           <CardContainer
-            displayData={displayData}
+            displayData={data}
             toggleFavorite={this.toggleFavorite}
           />
         </div>
