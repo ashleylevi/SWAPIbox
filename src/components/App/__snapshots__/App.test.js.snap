@@ -20,6 +20,7 @@ ShallowWrapper {
       "children": Array [
         <Header />,
         <Nav
+          displayFavorites={[Function]}
           fetchData={[Function]}
         />,
         <ScrollingText />,
@@ -41,6 +42,7 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "function",
         "props": Object {
+          "displayFavorites": [Function],
           "fetchData": [Function],
         },
         "ref": null,
@@ -68,6 +70,7 @@ ShallowWrapper {
         "children": Array [
           <Header />,
           <Nav
+            displayFavorites={[Function]}
             fetchData={[Function]}
           />,
           <ScrollingText />,
@@ -89,6 +92,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "function",
           "props": Object {
+            "displayFavorites": [Function],
             "fetchData": [Function],
           },
           "ref": null,
