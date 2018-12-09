@@ -36,7 +36,6 @@ class App extends Component {
         console.log(err.message);
       }
     }
-    console.log(this.state.people);
   }
 
   fetchData = async e => {
