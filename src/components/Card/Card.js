@@ -47,7 +47,7 @@ class Card extends Component {
 }
 
 Card.PropTypes = {
-  cardData: PropTypes.objectOf,
+  cardData: PropTypes.object,
   key: PropTypes.string,
   id: PropTypes.string,
   toggleFavorite: PropTypes.func
