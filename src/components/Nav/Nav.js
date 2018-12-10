@@ -27,5 +27,5 @@ export const Nav = ({ fetchData, cardCount }) => {
 Nav.propTypes = {
   fetchData: PropTypes.func,
   displayFavorites: PropTypes.func,
-  cardCount: PropTypes.arrayOf
+  cardCount: PropTypes.array
 }

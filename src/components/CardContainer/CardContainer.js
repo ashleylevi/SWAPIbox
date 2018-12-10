@@ -20,6 +20,6 @@ export const CardContainer = ({ displayData, toggleFavorite }) => {
 };
 
 CardContainer.propTypes = {
-  displayData: PropTypes.arrayOf,
+  displayData: PropTypes.array,
   toggleFavorite: PropTypes.func
 }

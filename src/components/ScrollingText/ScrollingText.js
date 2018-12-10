@@ -26,5 +26,5 @@ export const ScrollingText = ({
 };
 
 ScrollingText.propTypes = {
-   currentFilm: PropTypes.objectOf
+   currentFilm: PropTypes.object
 }
