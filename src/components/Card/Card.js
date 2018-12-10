@@ -30,16 +30,32 @@ class Card extends Component {
     });
 
     return (
-      <div className="card">
-          <div className="button-div">
-            <button className="fave-button" onClick={() => toggleFavorite(card)}>
-            <i class="far fa-star one"></i>
-            <i class="fas fa-star two"></i>
-              {/* {!card.isFavorite ? 'favorite' : 'unfavorite'} */}
-            </button>
-          </div>
-        <div className="list-container">
-          <ul className="info">{listItems}</ul>
+      // <div className="card">
+      //     <div className="button-div">
+      //       <button className="fave-button" onClick={() => toggleFavorite(card)}>
+      //       <i class="far fa-star one"></i>
+      //       <i class="fas fa-star two"></i>
+      //         {/* {!card.isFavorite ? 'favorite' : 'unfavorite'} */}
+      //       </button>
+      //     </div>
+      //   <div className="card-background">
+      //     <ul className="info">{listItems}</ul>
+      //   </div>
+      // </div>
+
+      <div class="flip-container">
+        <div class="flip-cards">
+            <div class="front-card"> 
+              <div className="button-div">
+              <button className="fave-button" onClick={() => toggleFavorite(card)}>
+              <i class="far fa-star one"></i>
+              <i class="fas fa-star two"></i>
+              </button>
+            </div>
+            </div>
+            <div class="reverse-card" id="card1"> 
+              <ul className="info">{listItems}</ul>
+            </div>
         </div>
       </div>
     );
