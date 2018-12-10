@@ -22,17 +22,16 @@
   background-color: #feda4a;
   border-radius: 20px;
   top: -150px;
-
-
+  margin-top: 0;
 }
 
-button {
+.nav-button {
   z-index:2;
   font-family: 'mono';
   /* font-family: 'Pathway Gothic One', sans-serif; */
   padding-top: 7px;
   font-size: 20px;
-  width: 150px;
+  width: 190px;
   height: 40px;
   color:#eabc01;
   font-weight: 600;

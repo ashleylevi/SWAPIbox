@@ -17,12 +17,12 @@ class Card extends Component {
             </li>
           );
         } else if (cardData[listItem].length === 0) {
-          return <li className="temp">{listItem}: none</li>;
+          return <li className="info">{listItem}: none</li>;
         }
       }
       if (listItem !== 'isFavorite' && listItem !== 'category') {
         return (
-          <li className="temp">
+          <li className="info">
             {listItem}: {cardData[listItem]}
           </li>
         );
@@ -31,10 +31,16 @@ class Card extends Component {
 
     return (
       <div className="card">
-        <button onClick={() => toggleFavorite(card)}>
-          {!card.isFavorite ? 'favorite' : 'unfavorite'}
-        </button>
-        <ul className="temp">{listItems}</ul>
+          <div className="button-div">
+            <button className="fave-button" onClick={() => toggleFavorite(card)}>
+            <i class="far fa-star one"></i>
+            <i class="fas fa-star two"></i>
+              {/* {!card.isFavorite ? 'favorite' : 'unfavorite'} */}
+            </button>
+          </div>
+        <div className="list-container">
+          <ul className="info">{listItems}</ul>
+        </div>
       </div>
     );
   }

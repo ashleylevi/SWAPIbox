@@ -6,16 +6,16 @@ export const Nav = ({ fetchData, cardCount }) => {
   return (
     <div>
       <section className="nav">
-        <button name="people" onClick={fetchData}>
+        <button className="nav-button" name="people" onClick={fetchData}>
           PEOPLE
         </button>
-        <button name="planets" onClick={fetchData}>
+        <button className="nav-button" name="planets" onClick={fetchData}>
           PLANETS
         </button>
-        <button name="vehicles" onClick={fetchData}>
+        <button className="nav-button" name="vehicles" onClick={fetchData}>
           VEHICLES
         </button>
-        <button name="favorites" onClick={fetchData}>
+        <button className="nav-button" name="favorites" onClick={fetchData}>
           FAVORTIES: {cardCount}
         </button>
       </section>
