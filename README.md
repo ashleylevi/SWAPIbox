@@ -4,7 +4,7 @@
 
 *SWAPI-BOX* is a web based application built in React that uses asynchronous fetch calls to a Star Wars API. Character, planet, people and vehicle data is then cleaned and organized into a fun UI with reusable React components. Users can browse throught these various categories and bookmark their favorite cards. Router is implemented for page navigation.
 
-Project Goals: 
+### Project Goals: 
 * Asynchronously call and clean data ONLY when the user requests it.
 * Separate application logic into small, testable functions.
 * Create modular, reusable React components.
