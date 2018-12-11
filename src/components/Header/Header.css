@@ -15,7 +15,7 @@
 }
 
 .header-pic {
-  opacity: .7;
+  opacity: 0.7;
   position: relative;
   z-index: 1;
   width: 500px;
@@ -46,9 +46,11 @@
 
 @-webkit-keyframes neon2 {
   from {
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #feda4a, 0 0 70px #feda4a, 0 0 80px #feda4a, 0 0 100px #feda4a, 0 0 150px #feda4a;
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #feda4a,
+      0 0 70px #feda4a, 0 0 80px #feda4a, 0 0 100px #feda4a, 0 0 150px #feda4a;
   }
   to {
-    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #feda4a, 0 0 35px #feda4a, 0 0 40px #feda4a, 0 0 50px #feda4a, 0 0 75px #feda4a;
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #feda4a,
+      0 0 35px #feda4a, 0 0 40px #feda4a, 0 0 50px #feda4a, 0 0 75px #feda4a;
   }
 }

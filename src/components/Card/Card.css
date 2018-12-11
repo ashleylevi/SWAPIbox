@@ -1,14 +1,13 @@
 .info {
-  color:#eabc01;
+  color: #eabc01;
 }
 
 .card {
   border: 2px solid #feda4a;
   border-radius: 10%;
-  min-height: 300px;
-  background-image: url(../../r2d2.png);
-  background-size: cover;
-  /* opacity: .5 */
+  height: 380px;
+  position: relative;
+  transition: 0.3s;
 }
 
 .list-container {
@@ -21,13 +20,15 @@ ul {
   text-align: center;
 }
 
-.fave-button, input[type="submit"], input[type="reset"] {
-    background: none;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-    outline: inherit;
-  }
+.fave-button,
+input[type='submit'],
+input[type='reset'] {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  outline: inherit;
+}
 
 .button-div {
   display: flex;
@@ -38,14 +39,41 @@ ul {
 
 .fa-star {
   color: #feda4a;
-  font-size: 22px;
+  font-size: 30px;
   background-color: none;
 }
-
+/* 
 .fave-button:hover .one,
 .fave-button .two {
     display: none;
 }
 .fave-button:hover .two{
     display: inline;
+} */
+
+.info-section {
+  border-top: 2px solid yellow;
+  text-align: left;
+  padding: 5px;
+  background: black;
+  height: 50%;
+  opacity: 1;
+}
+
+.card::after {
+  content: '';
+  background-image: url(../../r2d2.png);
+  opacity: 0.6;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+  background-size: cover;
+}
+
+.card:hover {
+  cursor: pointer;
+  transform: scale(1.03);
 }

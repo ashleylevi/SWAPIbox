@@ -6,10 +6,10 @@
 } */
 
 body {
-  background-image: url("https://farm5.staticflickr.com/4826/45285658055_3a04d41fcc.jpg");
+  background-image: url('https://farm5.staticflickr.com/4826/45285658055_3a04d41fcc.jpg');
   background-size: 80%;
   background-position: center;
   background-attachment: fixed;
-/* 
+  /* 
   font-family: 'jedifont'; */
 }
