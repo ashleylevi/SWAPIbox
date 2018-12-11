@@ -26,7 +26,7 @@
 }
 
 .nav-button {
-  z-index:2;
+  z-index: 2;
   padding-top: 7px;
   width: 190px;
   height: 40px;
@@ -42,10 +42,10 @@
   font-family: 'mono';
   font-size: 20px;
   font-weight: 600;
-  color:#eabc01;
-   -webkit-animation: neon2 1.5s ease-in-out infinite alternate;
+  color: #eabc01;
+  -webkit-animation: neon2 1.5s ease-in-out infinite alternate;
   -moz-animation: neon2 1.5s ease-in-out infinite alternate;
-  animation: neon2 1.5s ease-in-out infinite alternate; 
+  animation: neon2 1.5s ease-in-out infinite alternate;
 }
 
 .link:hover {
@@ -54,14 +54,16 @@
 }
 
 .active {
- color: #90403E;
+  color: #90403e;
 }
 
 @-webkit-keyframes neon2 {
   from {
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #feda4a, 0 0 70px #feda4a, 0 0 80px #feda4a, 0 0 100px #feda4a, 0 0 150px #feda4a;
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #feda4a,
+      0 0 70px #feda4a, 0 0 80px #feda4a, 0 0 100px #feda4a, 0 0 150px #feda4a;
   }
   to {
-    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #feda4a, 0 0 35px #feda4a, 0 0 40px #feda4a, 0 0 50px #feda4a, 0 0 75px #feda4a;
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #feda4a,
+      0 0 35px #feda4a, 0 0 40px #feda4a, 0 0 50px #feda4a, 0 0 75px #feda4a;
   }
 }
