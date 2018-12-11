@@ -16,6 +16,13 @@ export const Card = ({ cardData, toggleFavorite }) => {
 
  
   const listItems = keys.map(listItem => {
+    if (listItem === 'name') {
+     return (
+      <li className="name">{cardData[listItem]}</li>
+       ) 
+       
+    }
+
     if (listItem === 'residents') {
       if (cardData[listItem].length > 0) {
         const residents = cardData[listItem].join(', ');

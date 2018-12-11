@@ -24,7 +24,7 @@
 }
 
 .list-container {
-  margin-top: 250px;
+  margin-top: 230px;
 }
 
 ul {
@@ -102,5 +102,9 @@ input[type='reset'] {
 }
 
 .name {
-  font-size: 10px;
+  color: #feda4a;
+  font-size: 20px;
+  margin-bottom: 20px;
+  font-family: 'mono';
+  letter-spacing: 1px;
 }
