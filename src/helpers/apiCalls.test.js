@@ -21,6 +21,10 @@ describe('API', () => {
       await API.fetchFilms();
       expect(window.fetch).toHaveBeenCalledWith(expected);
     });
+
+    it('should throw an error if fetch fails', () => {
+      //ADD TESTS
+    });
   });
 
   describe('fetch people', () => {
@@ -37,6 +41,10 @@ describe('API', () => {
       const expected = 'https://swapi.co/api/people/';
       API.fetchPeople();
       expect(window.fetch).toHaveBeenCalledWith(expected);
+    });
+
+    it('should throw an error if fetch fails', () => {
+      //ADD TESTS
     });
   });
 
@@ -55,6 +63,10 @@ describe('API', () => {
       API.fetchVehicles();
       expect(window.fetch).toHaveBeenCalledWith(expected);
     });
+
+    it('should throw an error if fetch fails', () => {
+      //ADD TESTS
+    });
   });
 
   describe('fetch planets', () => {
@@ -71,6 +83,10 @@ describe('API', () => {
       API.fetchPlanets();
 
       expect(window.fetch).toHaveBeenCalledWith(expected);
+    });
+
+    it('should throw an error if fetch fails', () => {
+      //ADD TESTS
     });
   });
 });

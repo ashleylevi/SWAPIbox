@@ -108,6 +108,7 @@ describe('Helper', () => {
 
   describe('cleanPeopleData', () => {
     it('should return an array of people', async () => {
+      jest.setTimeout(30000);
       const mockPeople = mockData.people.results;
       const expectedPerson1 = {
         name: 'Luke Skywalker',
@@ -135,6 +136,7 @@ describe('Helper', () => {
 
   describe('cleanVehicleData', () => {
     it('should return an array of vehicles', async () => {
+      jest.setTimeout(30000);
       const mockVehicles = mockData.vehicles.results;
       const expectedVehicle1 = {
         name: 'Sand Crawler',
@@ -162,6 +164,7 @@ describe('Helper', () => {
 
   describe('cleanPlanetData', () => {
     it('should return an array of planets', async () => {
+      jest.setTimeout(30000);
       const mockPlanets = mockData.planets.results;
       const expectedPlanet1 = {
         climate: 'temperate',

@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-
-import Card from '../Card/Card';
+import { Card } from '../Card/Card';
 import './CardContainer.css';
 
 export const CardContainer = ({ displayData, toggleFavorite }) => {
@@ -22,4 +21,4 @@ export const CardContainer = ({ displayData, toggleFavorite }) => {
 CardContainer.propTypes = {
   displayData: PropTypes.array,
   toggleFavorite: PropTypes.func
-}
+};
