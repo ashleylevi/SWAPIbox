@@ -27,25 +27,28 @@
 
 .nav-button {
   z-index:2;
-  font-family: 'mono';
-  /* font-family: 'Pathway Gothic One', sans-serif; */
   padding-top: 7px;
-  font-size: 20px;
   width: 190px;
   height: 40px;
-  color:#eabc01;
-  font-weight: 600;
   background-color: #feda4a;
   border-left: 2px solid #eabc01;
   border-right: 2px solid #eabc01;
   border-top: none;
   border-bottom: none;
-  -webkit-animation: neon2 1.5s ease-in-out infinite alternate;
-  -moz-animation: neon2 1.5s ease-in-out infinite alternate;
-  animation: neon2 1.5s ease-in-out infinite alternate;
 }
 
-button:hover {
+.link {
+  text-decoration: none;
+  font-family: 'mono';
+  font-size: 20px;
+  font-weight: 600;
+  color:#eabc01;
+   -webkit-animation: neon2 1.5s ease-in-out infinite alternate;
+  -moz-animation: neon2 1.5s ease-in-out infinite alternate;
+  animation: neon2 1.5s ease-in-out infinite alternate; 
+}
+
+.link:hover {
   color: #feda4a;
   cursor: pointer;
 }
