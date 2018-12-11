@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route, NavLink , Switch } from 'react-router-dom';
+import { Route, NavLink, Switch } from 'react-router-dom';
 
 import './App.css';
 
@@ -196,39 +196,61 @@ class App extends Component {
             cardCount={favorites.length}
           />
           <Switch>
-            <Route exact path={'/people'} render={({match}) => {
-              return <CardContainer
-                displayData={data}
-                toggleFavorite={this.toggleFavorite}
-              />
-            }
-          }
-          />
-          <Route exact path={'/planets'} render={({match}) => {
-              return <CardContainer
-                displayData={data}
-                toggleFavorite={this.toggleFavorite}
-              />
-            }
-          }
-          />
-          <Route exact path={'/vehicles'} render={({match}) => {
-              return <CardContainer
-                displayData={data}
-                toggleFavorite={this.toggleFavorite}
-              />
-            }
-          }
-          />
-          <Route exact path={'/favorites'} render={({match}) => {
-              return <CardContainer
-                displayData={data}
-                toggleFavorite={this.toggleFavorite}
-                cardCount={favorites.length}
-              />
-            }
-          }
-          />
+            <Route
+              exact
+              path={'/people'}
+              render={({ match }) => {
+                const data = this.state.people;
+                return (
+                  <CardContainer
+                    displayData={data}
+                    toggleFavorite={this.toggleFavorite}
+                  />
+                );
+              }}
+            />
+            <Route
+              exact
+              path={'/planets'}
+              render={({ match }) => {
+                console.log(match);
+                const data = this.state.planets;
+                return (
+                  <CardContainer
+                    displayData={data}
+                    toggleFavorite={this.toggleFavorite}
+                  />
+                );
+              }}
+            />
+            <Route
+              exact
+              path={'/vehicles'}
+              render={({ match }) => {
+                const data = this.state.vehicles;
+                return (
+                  <CardContainer
+                    displayData={data}
+                    toggleFavorite={this.toggleFavorite}
+                  />
+                );
+              }}
+            />
+            <Route
+              exact
+              path={'/favorites'}
+              render={({ match }) => {
+                let favorites = this.displayFavorites();
+                const data = favorites;
+                return (
+                  <CardContainer
+                    displayData={data}
+                    toggleFavorite={this.toggleFavorite}
+                    cardCount={favorites.length}
+                  />
+                );
+              }}
+            />
           </Switch>
         </div>
       );
