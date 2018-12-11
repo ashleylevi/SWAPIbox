@@ -78,7 +78,7 @@ input[type='reset'] {
 }
 
 .info {
-  margin: 5px;
+  margin-bottom: 5px;
   font-family: 'mono';
   letter-spacing: 1px;
   font-size: 13px;
@@ -92,7 +92,7 @@ input[type='reset'] {
 .overlay {
   background: linear-gradient(0deg, 
               rgba(0,0,0,1) 0%,
-              rgba(0,0,0,0.5060399159663865) 70%,
+              rgba(0,0,0,0.5060399159663865) 80%,
               rgba(0,0,0,0) 100%);
   height: 100%;
   position: absolute;
