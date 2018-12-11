@@ -13,7 +13,7 @@
 * Use propTypes to validate props passed to each component.
 * Write meaningful, comprehensive unit and integration tests.
 
-![home-page]('assets/swapi1.gif')
+![home-page](assets/swapi1.gif)
 
 
 
