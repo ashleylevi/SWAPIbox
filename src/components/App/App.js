@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Route, NavLink , Switch } from 'react-router-dom';
 
 import './App.css';
 
@@ -187,22 +188,53 @@ class App extends Component {
 
     if (displayData.length > 0) {
       return (
-        <div>
+        <div className="App">
           <Header />
           <Nav
             fetchData={this.fetchData}
             displayFavorites={this.displayFavorites}
             cardCount={favorites.length}
           />
-          <CardContainer
-            displayData={data}
-            toggleFavorite={this.toggleFavorite}
+          <Switch>
+            <Route exact path={'/people'} render={({match}) => {
+              return <CardContainer
+                displayData={data}
+                toggleFavorite={this.toggleFavorite}
+              />
+            }
+          }
           />
+          <Route exact path={'/planets'} render={({match}) => {
+              return <CardContainer
+                displayData={data}
+                toggleFavorite={this.toggleFavorite}
+              />
+            }
+          }
+          />
+          <Route exact path={'/vehicles'} render={({match}) => {
+              return <CardContainer
+                displayData={data}
+                toggleFavorite={this.toggleFavorite}
+              />
+            }
+          }
+          />
+          <Route exact path={'/favorites'} render={({match}) => {
+              return <CardContainer
+                displayData={data}
+                toggleFavorite={this.toggleFavorite}
+                cardCount={favorites.length}
+              />
+            }
+          }
+          />
+          </Switch>
         </div>
       );
     } else {
       return (
-        <div>
+        <div className="App">
           <Header />
           <Nav
             fetchData={this.fetchData}
@@ -216,6 +248,3 @@ class App extends Component {
 }
 
 export default App;
-
-//ADD LIGHTSABER FOR NAV
-//ADD DARTH VADER SOUNDS
