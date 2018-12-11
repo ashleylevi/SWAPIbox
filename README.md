@@ -13,15 +13,11 @@ Project Goals:
 * Use propTypes to validate props passed to each component.
 * Write meaningful, comprehensive unit and integration tests.
 
-![ProtoMaster screenshot 1](images/protomaster.png)
-
-
-![ProtoMaster screenshot 2](images/protomaster2.png)
 
 
 ### Original Wireframe:
 
-![ProtoMaster screenshot 3](images/protowireframe.png)
+![swapibox-wireframe](assets/swapibox-wireframe.png)
 
 
 ### Installation and Setup Instructions
