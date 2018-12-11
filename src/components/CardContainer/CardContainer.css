@@ -1,5 +1,8 @@
-.temp {
-  color: red;
+@font-face {
+  font-family: 'mono';
+  font-style: normal;
+  font-weight: normal;
+  src: url(../../anakin_mono/anakinmono.ttf);
 }
 
 .card-container {
@@ -14,7 +17,7 @@
 }
 
 .no-favs {
-  color: #eabc01;
+  font-family: 'mono';
+  color: #feda4a;
   text-align: center;
-  background: red;
 }

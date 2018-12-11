@@ -12,6 +12,7 @@ export const CardContainer = ({ displayData, toggleFavorite, cardCount }) => {
         key={card.name}
         id={card.name}
         toggleFavorite={toggleFavorite}
+    
       />
     );
   });
@@ -19,7 +20,7 @@ export const CardContainer = ({ displayData, toggleFavorite, cardCount }) => {
   if (cardCount === 0) {
     return (
       <div>
-        <h1 className="no-favs">NO FAVORITES</h1>
+        <h1 className="no-favs">NO FAVORITES ADDED YET!</h1>
       </div>
     );
   } else {

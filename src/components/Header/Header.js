@@ -9,7 +9,7 @@ export const Header = () => {
       <div className="img-div">
         <img className="header-pic" src="./vadarnew.png" alt="darth-vader" />
       </div>
-      <NavLink className="main-title" to="/home" name="home">
+      <NavLink className="main-title" activeStyle={{ color: '#b99500' }} to="/home" name="home">
         SWAPi Box
       </NavLink>
     </div>

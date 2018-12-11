@@ -19,18 +19,10 @@
   position: relative;
   z-index: 1;
   width: 500px;
-  /* top: 145px; */
 }
-
-/* .img-div {
-  height: 200px;
-  width: 400px;
-  box-shadow: inset 0px 0px 10px rgba(0,0,0,0.9);
-} */
 
 .main-title {
   font-size: 50px;
-  /* letter-spacing: 10px; */
   -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;
   transition: all 0.5s;
@@ -45,6 +37,13 @@
   margin-top: 30px;
   margin-bottom: 30px;
   text-decoration: none;
+  transition: 0.3s;
+}
+
+
+.main-title:hover {
+  transform: scale(1.03);
+  cursor: pointer;
 }
 
 @-webkit-keyframes neon2 {

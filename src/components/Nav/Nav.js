@@ -12,7 +12,7 @@ export const Nav = ({ fetchData, cardCount }) => {
             className="link"
             to="/people"
             name="people"
-            activeStyle={{ color: '#90403E' }}
+            activeStyle={{ color: '#b99500' }}
             onClick={fetchData}
           >
             PEOPLE
@@ -23,7 +23,7 @@ export const Nav = ({ fetchData, cardCount }) => {
             className="link"
             to="/planets"
             name="planets"
-            activeStyle={{ color: '#90403E' }}
+            activeStyle={{ color: '#b99500' }}
             onClick={fetchData}
           >
             PLANETS
@@ -34,7 +34,7 @@ export const Nav = ({ fetchData, cardCount }) => {
             className="link"
             to="/vehicles"
             name="vehicles"
-            activeStyle={{ color: '#90403E' }}
+            activeStyle={{ color: '#b99500' }}
             onClick={fetchData}
           >
             VEHICLES
@@ -45,7 +45,7 @@ export const Nav = ({ fetchData, cardCount }) => {
             className="link"
             to="/favorites"
             name="favorites"
-            activeStyle={{ color: '#90403E' }}
+            activeStyle={{ color: '#b99500' }}
             onClick={fetchData}
           >
             FAVORTIES: {cardCount}
