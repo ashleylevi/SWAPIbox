@@ -195,63 +195,25 @@ class App extends Component {
             displayFavorites={this.displayFavorites}
             cardCount={favorites.length}
           />
-          <Switch>
-            <Route
-              exact
-              path={'/people'}
-              render={({ match }) => {
-                const data = this.state.people;
-                return (
-                  <CardContainer
-                    displayData={data}
-                    toggleFavorite={this.toggleFavorite}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path={'/planets'}
-              render={({ match }) => {
-                console.log(match);
-                const data = this.state.planets;
-                return (
-                  <CardContainer
-                    displayData={data}
-                    toggleFavorite={this.toggleFavorite}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path={'/vehicles'}
-              render={({ match }) => {
-                const data = this.state.vehicles;
-                return (
-                  <CardContainer
-                    displayData={data}
-                    toggleFavorite={this.toggleFavorite}
-                  />
-                );
-              }}
-            />
-            <Route
-              exact
-              path={'/favorites'}
-              render={({ match }) => {
-                let favorites = this.displayFavorites();
-                const data = favorites;
-                return (
-                  <CardContainer
-                    displayData={data}
-                    toggleFavorite={this.toggleFavorite}
-                    cardCount={favorites.length}
-                  />
-                );
-              }}
-            />
-          </Switch>
+          <Route
+            path={'/:category'}
+            render={({ match }) => {
+              const { category } = match.params;
+              let data;
+              if (category === 'favorites') {
+                data = this.displayFavorites();
+              } else {
+                data = this.state[category];
+              }
+              return (
+                <CardContainer
+                  displayData={data}
+                  toggleFavorite={this.toggleFavorite}
+                  cardCount={data.length}
+                />
+              );
+            }}
+          />
         </div>
       );
     } else {
