@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
-import { Route, NavLink, Switch } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 
 import './App.css';
 
-import { ScrollingText } from '../ScrollingText/ScrollingText';
-import { Nav } from '../Nav/Nav';
-import { Header } from '../Header/Header';
 import { CardContainer } from '../CardContainer/CardContainer';
 import { Home } from '../Home/Home';
 
@@ -181,21 +178,15 @@ class App extends Component {
     const { currentFilm, displayData } = this.state;
     let data = [];
     let favorites = this.displayFavorites();
-    if (displayData === 'favorites') {
-      data = favorites;
-    } else {
-      data = this.state[displayData];
-    }
+    // if (displayData === 'favorites') {
+    //   data = favorites;
+    // } else {
+    //   data = this.state[displayData];
+    // }
 
     if (displayData.length > 0) {
       return (
         <div className="App">
-          <Header />
-          <Nav
-            fetchData={this.fetchData}
-            displayFavorites={this.displayFavorites}
-            cardCount={favorites.length}
-          />
           <Route
             path={'/:category'}
             render={({ match }) => {
@@ -206,13 +197,32 @@ class App extends Component {
               } else {
                 data = this.state[category];
               }
-              return (
-                <CardContainer
-                  displayData={data}
-                  toggleFavorite={this.toggleFavorite}
-                  cardCount={data.length}
-                />
-              );
+
+              if (category === 'home') {
+                return (
+                  <Home
+                    fetchData={this.fetchData}
+                    displayFavorites={this.displayFavorites}
+                    cardCount={favorites.length}
+                    currentFilm={currentFilm}
+                  />
+                );
+              } else {
+                return (
+                  <div>
+                    <Home
+                      fetchData={this.fetchData}
+                      displayFavorites={this.displayFavorites}
+                      cardCount={favorites.length}
+                    />
+                    <CardContainer
+                      displayData={data}
+                      toggleFavorite={this.toggleFavorite}
+                      cardCount={data.length}
+                    />
+                  </div>
+                );
+              }
             }}
           />
         </div>
@@ -220,15 +230,12 @@ class App extends Component {
     } else {
       return (
         <div className="App">
-        <Home fetchData={this.fetchData}
-            displayFavorites={this.displayFavorites}
-            currentFilm ={currentFilm}/>
-          {/* <Header />
-          <Nav
+          <Home
             fetchData={this.fetchData}
             displayFavorites={this.displayFavorites}
+            currentFilm={currentFilm}
+            cardCount={data.length}
           />
-          <ScrollingText {...currentFilm} /> */}
         </div>
       );
     }

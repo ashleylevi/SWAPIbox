@@ -1,4 +1,6 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
+
 import './Header.css';
 
 export const Header = () => {
@@ -7,7 +9,9 @@ export const Header = () => {
       <div className="img-div">
         <img className="header-pic" src="./vadarnew.png" alt="darth-vader" />
       </div>
-      <h1 className="main-title">SWAPi Box</h1>
+      <NavLink className="main-title" to="/home" name="home">
+        SWAPi Box
+      </NavLink>
     </div>
   );
 };
