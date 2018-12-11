@@ -30,5 +30,10 @@ Project Goals:
 
 4. Run `npm start` in terminal to start server.
 
+### Contributors 
+
+* Ashley Levi
+* Tanjie Mcmeans
+
 
 
