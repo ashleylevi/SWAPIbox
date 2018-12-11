@@ -5,9 +5,6 @@
   src: url(../../anakin_mono/anakinmono.ttf);
 }
 
-/* blue color */
-/* color: #228DFF; */
-
 .nav {
   height: 40px;
   display: flex;
@@ -51,10 +48,6 @@
 .link:hover {
   color: #feda4a;
   cursor: pointer;
-}
-
-.active {
-  color: #90403e;
 }
 
 @-webkit-keyframes neon2 {

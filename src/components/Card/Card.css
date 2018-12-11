@@ -1,3 +1,11 @@
+@font-face {
+  font-family: 'mono';
+  font-style: normal;
+  font-weight: normal;
+  src: url(../../anakin_mono/anakinmono.ttf);
+}
+
+
 .info {
   color: #eabc01;
 }
@@ -5,13 +13,18 @@
 .card {
   border: 2px solid #feda4a;
   border-radius: 10%;
-  height: 380px;
+  height: 440px;
   position: relative;
   transition: 0.3s;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 0; 
+
 }
 
 .list-container {
-  margin-top: 160px;
+  margin-top: 250px;
 }
 
 ul {
@@ -42,28 +55,18 @@ input[type='reset'] {
   font-size: 30px;
   background-color: none;
 }
-/* 
-.fave-button:hover .one,
-.fave-button .two {
-    display: none;
-}
-.fave-button:hover .two{
-    display: inline;
-} */
 
 .info-section {
-  border-top: 2px solid yellow;
-  text-align: left;
+  text-align: center;
   padding: 5px;
-  background: black;
+  font-weight: 700;
   height: 50%;
   opacity: 1;
 }
 
 .card::after {
   content: '';
-  background-image: url(../../r2d2.png);
-  opacity: 0.6;
+  opacity: 0.3;
   top: 0;
   left: 0;
   bottom: 0;
@@ -74,7 +77,30 @@ input[type='reset'] {
   border-radius: 10%;
 }
 
+.info {
+  margin: 5px;
+  font-family: 'mono';
+  letter-spacing: 1px;
+  font-size: 13px;
+}
+
 .card:hover {
   cursor: pointer;
   transform: scale(1.03);
+}
+
+.overlay {
+  background: linear-gradient(0deg, 
+              rgba(0,0,0,1) 0%,
+              rgba(0,0,0,0.5060399159663865) 70%,
+              rgba(0,0,0,0) 100%);
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+  border-radius: 10%;
+}
+
+.name {
+  font-size: 10px;
 }
