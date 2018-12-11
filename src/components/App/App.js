@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route, NavLink , Switch } from 'react-router-dom';
+import { Route, NavLink, Switch } from 'react-router-dom';
 
 import './App.css';
 
@@ -195,41 +195,25 @@ class App extends Component {
             displayFavorites={this.displayFavorites}
             cardCount={favorites.length}
           />
-          <Switch>
-            <Route exact path={'/people'} render={({match}) => {
-              return <CardContainer
-                displayData={data}
-                toggleFavorite={this.toggleFavorite}
-              />
-            }
-          }
+          <Route
+            path={'/:category'}
+            render={({ match }) => {
+              const { category } = match.params;
+              let data;
+              if (category === 'favorites') {
+                data = this.displayFavorites();
+              } else {
+                data = this.state[category];
+              }
+              return (
+                <CardContainer
+                  displayData={data}
+                  toggleFavorite={this.toggleFavorite}
+                  cardCount={data.length}
+                />
+              );
+            }}
           />
-          <Route exact path={'/planets'} render={({match}) => {
-              return <CardContainer
-                displayData={data}
-                toggleFavorite={this.toggleFavorite}
-              />
-            }
-          }
-          />
-          <Route exact path={'/vehicles'} render={({match}) => {
-              return <CardContainer
-                displayData={data}
-                toggleFavorite={this.toggleFavorite}
-              />
-            }
-          }
-          />
-          <Route exact path={'/favorites'} render={({match}) => {
-              return <CardContainer
-                displayData={data}
-                toggleFavorite={this.toggleFavorite}
-                cardCount={favorites.length}
-              />
-            }
-          }
-          />
-          </Switch>
         </div>
       );
     } else {
