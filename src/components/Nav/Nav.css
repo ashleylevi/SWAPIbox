@@ -53,6 +53,10 @@
   cursor: pointer;
 }
 
+.active {
+ color: #90403E;
+}
+
 @-webkit-keyframes neon2 {
   from {
     text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #feda4a, 0 0 70px #feda4a, 0 0 80px #feda4a, 0 0 100px #feda4a, 0 0 150px #feda4a;

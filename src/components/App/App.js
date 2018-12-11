@@ -7,6 +7,7 @@ import { ScrollingText } from '../ScrollingText/ScrollingText';
 import { Nav } from '../Nav/Nav';
 import { Header } from '../Header/Header';
 import { CardContainer } from '../CardContainer/CardContainer';
+import { Home } from '../Home/Home';
 
 import * as API from '../../helpers/apiCalls';
 import * as Helper from '../../helpers/Helper';
@@ -235,12 +236,15 @@ class App extends Component {
     } else {
       return (
         <div className="App">
-          <Header />
+        <Home fetchData={this.fetchData}
+            displayFavorites={this.displayFavorites}
+            currentFilm ={currentFilm}/>
+          {/* <Header />
           <Nav
             fetchData={this.fetchData}
             displayFavorites={this.displayFavorites}
           />
-          <ScrollingText {...currentFilm} />
+          <ScrollingText {...currentFilm} /> */}
         </div>
       );
     }
