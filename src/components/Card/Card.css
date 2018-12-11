@@ -71,6 +71,7 @@ input[type='reset'] {
   position: absolute;
   z-index: -1;
   background-size: cover;
+  border-radius: 10%;
 }
 
 .card:hover {
