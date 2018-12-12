@@ -37,7 +37,7 @@
 ### Contributors 
 
 * Ashley Levi
-* Tanjie Mcmeans
+* Tanjie Mcmeans https://github.com/TMcMeans
 
 
 
