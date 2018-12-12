@@ -30,5 +30,6 @@ export const CardContainer = ({ displayData, toggleFavorite, cardCount }) => {
 
 CardContainer.propTypes = {
   displayData: PropTypes.array,
-  toggleFavorite: PropTypes.func
+  toggleFavorite: PropTypes.func,
+  cardCount: PropTypes.number
 };

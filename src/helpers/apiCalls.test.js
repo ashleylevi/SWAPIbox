@@ -23,7 +23,11 @@ describe('API', () => {
     });
 
     it('should throw an error if fetch fails', () => {
-      //ADD TESTS
+      window.fetch = () => Promise.resolve({ ok: false });
+
+      const expected = Error('films not fetched');
+
+      expect(API.fetchFilms()).rejects.toEqual(expected);
     });
   });
 
@@ -44,7 +48,11 @@ describe('API', () => {
     });
 
     it('should throw an error if fetch fails', () => {
-      //ADD TESTS
+      window.fetch = () => Promise.resolve({ ok: false });
+
+      const expected = Error('people not fetched');
+
+      expect(API.fetchPeople()).rejects.toEqual(expected);
     });
   });
 
@@ -65,7 +73,11 @@ describe('API', () => {
     });
 
     it('should throw an error if fetch fails', () => {
-      //ADD TESTS
+      window.fetch = () => Promise.resolve({ ok: false });
+
+      const expected = Error('vehicles not fetched');
+
+      expect(API.fetchVehicles()).rejects.toEqual(expected);
     });
   });
 
@@ -86,7 +98,11 @@ describe('API', () => {
     });
 
     it('should throw an error if fetch fails', () => {
-      //ADD TESTS
+      window.fetch = () => Promise.resolve({ ok: false });
+
+      const expected = Error('planets not fetched');
+
+      expect(API.fetchPlanets()).rejects.toEqual(expected);
     });
   });
 });

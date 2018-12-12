@@ -178,11 +178,6 @@ class App extends Component {
     const { currentFilm, displayData } = this.state;
     let data = [];
     let favorites = this.displayFavorites();
-    // if (displayData === 'favorites') {
-    //   data = favorites;
-    // } else {
-    //   data = this.state[displayData];
-    // }
 
     if (displayData.length > 0) {
       return (
