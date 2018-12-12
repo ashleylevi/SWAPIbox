@@ -14,6 +14,8 @@
 * Write meaningful, comprehensive unit and integration tests.
 
 ![home-page](assets/swapi1.gif)
+![navigating-page](assets/showingcards.gif)
+![favoriting](assets/savingfavorites.gif)
 
 
 
