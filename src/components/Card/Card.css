@@ -5,7 +5,6 @@
   src: url(../../anakin_mono/anakinmono.ttf);
 }
 
-
 .info {
   color: #eabc01;
 }
@@ -13,14 +12,13 @@
 .card {
   border: 2px solid #feda4a;
   border-radius: 10%;
-  height: 440px;
+  height: 500px;
   position: relative;
   transition: 0.3s;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  z-index: 0; 
-
+  z-index: 0;
 }
 
 .list-container {
@@ -90,10 +88,12 @@ input[type='reset'] {
 }
 
 .overlay {
-  background: linear-gradient(0deg, 
-              rgba(0,0,0,1) 0%,
-              rgba(0,0,0,0.5060399159663865) 80%,
-              rgba(0,0,0,0) 100%);
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 0.5060399159663865) 80%,
+    rgba(0, 0, 0, 0) 100%
+  );
   height: 100%;
   position: absolute;
   width: 100%;
