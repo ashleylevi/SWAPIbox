@@ -12,7 +12,6 @@ export const CardContainer = ({ displayData, toggleFavorite, cardCount }) => {
         key={card.name}
         id={card.name}
         toggleFavorite={toggleFavorite}
-    
       />
     );
   });
