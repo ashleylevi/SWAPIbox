@@ -22,15 +22,20 @@ ShallowWrapper {
           className="img-div"
         >
           <img
+            alt="darth-vader"
             className="header-pic"
             src="./vadarnew.png"
           />
         </div>,
-        <h1
+        <NavLink
+          activeClassName="active"
+          aria-current="page"
           className="main-title"
+          name="home"
+          to="/home"
         >
           SWAPi Box
-        </h1>,
+        </NavLink>,
       ],
       "className": "header",
     },
@@ -42,6 +47,7 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": <img
+            alt="darth-vader"
             className="header-pic"
             src="./vadarnew.png"
           />,
@@ -53,6 +59,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
+            "alt": "darth-vader",
             "className": "header-pic",
             "src": "./vadarnew.png",
           },
@@ -65,14 +72,18 @@ ShallowWrapper {
       Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "host",
+        "nodeType": "function",
         "props": Object {
+          "activeClassName": "active",
+          "aria-current": "page",
           "children": "SWAPi Box",
           "className": "main-title",
+          "name": "home",
+          "to": "/home",
         },
         "ref": null,
         "rendered": "SWAPi Box",
-        "type": "h1",
+        "type": [Function],
       },
     ],
     "type": "div",
@@ -88,15 +99,20 @@ ShallowWrapper {
             className="img-div"
           >
             <img
+              alt="darth-vader"
               className="header-pic"
               src="./vadarnew.png"
             />
           </div>,
-          <h1
+          <NavLink
+            activeClassName="active"
+            aria-current="page"
             className="main-title"
+            name="home"
+            to="/home"
           >
             SWAPi Box
-          </h1>,
+          </NavLink>,
         ],
         "className": "header",
       },
@@ -108,6 +124,7 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": <img
+              alt="darth-vader"
               className="header-pic"
               src="./vadarnew.png"
             />,
@@ -119,6 +136,7 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
+              "alt": "darth-vader",
               "className": "header-pic",
               "src": "./vadarnew.png",
             },
@@ -131,14 +149,18 @@ ShallowWrapper {
         Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "host",
+          "nodeType": "function",
           "props": Object {
+            "activeClassName": "active",
+            "aria-current": "page",
             "children": "SWAPi Box",
             "className": "main-title",
+            "name": "home",
+            "to": "/home",
           },
           "ref": null,
           "rendered": "SWAPi Box",
-          "type": "h1",
+          "type": [Function],
         },
       ],
       "type": "div",

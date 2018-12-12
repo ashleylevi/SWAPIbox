@@ -24,25 +24,77 @@ ShallowWrapper {
           className="nav"
         >
           <button
-            name="people"
+            className="nav-button"
           >
-            PEOPLE
+            <NavLink
+              activeClassName="active"
+              activeStyle={
+                Object {
+                  "color": "#90403E",
+                }
+              }
+              aria-current="page"
+              className="link"
+              name="people"
+              to="/people"
+            >
+              PEOPLE
+            </NavLink>
           </button>
           <button
-            name="planets"
+            className="nav-button"
           >
-            PLANETS
+            <NavLink
+              activeClassName="active"
+              activeStyle={
+                Object {
+                  "color": "#90403E",
+                }
+              }
+              aria-current="page"
+              className="link"
+              name="planets"
+              to="/planets"
+            >
+              PLANETS
+            </NavLink>
           </button>
           <button
-            name="vehicles"
+            className="nav-button"
           >
-            VEHICLES
+            <NavLink
+              activeClassName="active"
+              activeStyle={
+                Object {
+                  "color": "#90403E",
+                }
+              }
+              aria-current="page"
+              className="link"
+              name="vehicles"
+              to="/vehicles"
+            >
+              VEHICLES
+            </NavLink>
           </button>
           <button
-            name="favorites"
+            className="nav-button"
           >
-            FAVORTIES: 
-            4
+            <NavLink
+              activeClassName="active"
+              activeStyle={
+                Object {
+                  "color": "#90403E",
+                }
+              }
+              aria-current="page"
+              className="link"
+              name="favorites"
+              to="/favorites"
+            >
+              FAVORTIES: 
+              4
+            </NavLink>
           </button>
         </section>,
         <section
@@ -59,25 +111,77 @@ ShallowWrapper {
         "props": Object {
           "children": Array [
             <button
-              name="people"
+              className="nav-button"
             >
-              PEOPLE
+              <NavLink
+                activeClassName="active"
+                activeStyle={
+                  Object {
+                    "color": "#90403E",
+                  }
+                }
+                aria-current="page"
+                className="link"
+                name="people"
+                to="/people"
+              >
+                PEOPLE
+              </NavLink>
             </button>,
             <button
-              name="planets"
+              className="nav-button"
             >
-              PLANETS
+              <NavLink
+                activeClassName="active"
+                activeStyle={
+                  Object {
+                    "color": "#90403E",
+                  }
+                }
+                aria-current="page"
+                className="link"
+                name="planets"
+                to="/planets"
+              >
+                PLANETS
+              </NavLink>
             </button>,
             <button
-              name="vehicles"
+              className="nav-button"
             >
-              VEHICLES
+              <NavLink
+                activeClassName="active"
+                activeStyle={
+                  Object {
+                    "color": "#90403E",
+                  }
+                }
+                aria-current="page"
+                className="link"
+                name="vehicles"
+                to="/vehicles"
+              >
+                VEHICLES
+              </NavLink>
             </button>,
             <button
-              name="favorites"
+              className="nav-button"
             >
-              FAVORTIES: 
-              4
+              <NavLink
+                activeClassName="active"
+                activeStyle={
+                  Object {
+                    "color": "#90403E",
+                  }
+                }
+                aria-current="page"
+                className="link"
+                name="favorites"
+                to="/favorites"
+              >
+                FAVORTIES: 
+                4
+              </NavLink>
             </button>,
           ],
           "className": "nav",
@@ -89,12 +193,43 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "PEOPLE",
-              "name": "people",
-              "onClick": undefined,
+              "children": <NavLink
+                activeClassName="active"
+                activeStyle={
+                  Object {
+                    "color": "#90403E",
+                  }
+                }
+                aria-current="page"
+                className="link"
+                name="people"
+                to="/people"
+              >
+                PEOPLE
+              </NavLink>,
+              "className": "nav-button",
             },
             "ref": null,
-            "rendered": "PEOPLE",
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "activeClassName": "active",
+                "activeStyle": Object {
+                  "color": "#90403E",
+                },
+                "aria-current": "page",
+                "children": "PEOPLE",
+                "className": "link",
+                "name": "people",
+                "onClick": undefined,
+                "to": "/people",
+              },
+              "ref": null,
+              "rendered": "PEOPLE",
+              "type": [Function],
+            },
             "type": "button",
           },
           Object {
@@ -102,12 +237,43 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "PLANETS",
-              "name": "planets",
-              "onClick": undefined,
+              "children": <NavLink
+                activeClassName="active"
+                activeStyle={
+                  Object {
+                    "color": "#90403E",
+                  }
+                }
+                aria-current="page"
+                className="link"
+                name="planets"
+                to="/planets"
+              >
+                PLANETS
+              </NavLink>,
+              "className": "nav-button",
             },
             "ref": null,
-            "rendered": "PLANETS",
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "activeClassName": "active",
+                "activeStyle": Object {
+                  "color": "#90403E",
+                },
+                "aria-current": "page",
+                "children": "PLANETS",
+                "className": "link",
+                "name": "planets",
+                "onClick": undefined,
+                "to": "/planets",
+              },
+              "ref": null,
+              "rendered": "PLANETS",
+              "type": [Function],
+            },
             "type": "button",
           },
           Object {
@@ -115,12 +281,43 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "VEHICLES",
-              "name": "vehicles",
-              "onClick": undefined,
+              "children": <NavLink
+                activeClassName="active"
+                activeStyle={
+                  Object {
+                    "color": "#90403E",
+                  }
+                }
+                aria-current="page"
+                className="link"
+                name="vehicles"
+                to="/vehicles"
+              >
+                VEHICLES
+              </NavLink>,
+              "className": "nav-button",
             },
             "ref": null,
-            "rendered": "VEHICLES",
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "activeClassName": "active",
+                "activeStyle": Object {
+                  "color": "#90403E",
+                },
+                "aria-current": "page",
+                "children": "VEHICLES",
+                "className": "link",
+                "name": "vehicles",
+                "onClick": undefined,
+                "to": "/vehicles",
+              },
+              "ref": null,
+              "rendered": "VEHICLES",
+              "type": [Function],
+            },
             "type": "button",
           },
           Object {
@@ -128,18 +325,50 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": Array [
+              "children": <NavLink
+                activeClassName="active"
+                activeStyle={
+                  Object {
+                    "color": "#90403E",
+                  }
+                }
+                aria-current="page"
+                className="link"
+                name="favorites"
+                to="/favorites"
+              >
+                FAVORTIES: 
+                4
+              </NavLink>,
+              "className": "nav-button",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "activeClassName": "active",
+                "activeStyle": Object {
+                  "color": "#90403E",
+                },
+                "aria-current": "page",
+                "children": Array [
+                  "FAVORTIES: ",
+                  4,
+                ],
+                "className": "link",
+                "name": "favorites",
+                "onClick": undefined,
+                "to": "/favorites",
+              },
+              "ref": null,
+              "rendered": Array [
                 "FAVORTIES: ",
                 4,
               ],
-              "name": "favorites",
-              "onClick": undefined,
+              "type": [Function],
             },
-            "ref": null,
-            "rendered": Array [
-              "FAVORTIES: ",
-              4,
-            ],
             "type": "button",
           },
         ],
@@ -170,25 +399,77 @@ ShallowWrapper {
             className="nav"
           >
             <button
-              name="people"
+              className="nav-button"
             >
-              PEOPLE
+              <NavLink
+                activeClassName="active"
+                activeStyle={
+                  Object {
+                    "color": "#90403E",
+                  }
+                }
+                aria-current="page"
+                className="link"
+                name="people"
+                to="/people"
+              >
+                PEOPLE
+              </NavLink>
             </button>
             <button
-              name="planets"
+              className="nav-button"
             >
-              PLANETS
+              <NavLink
+                activeClassName="active"
+                activeStyle={
+                  Object {
+                    "color": "#90403E",
+                  }
+                }
+                aria-current="page"
+                className="link"
+                name="planets"
+                to="/planets"
+              >
+                PLANETS
+              </NavLink>
             </button>
             <button
-              name="vehicles"
+              className="nav-button"
             >
-              VEHICLES
+              <NavLink
+                activeClassName="active"
+                activeStyle={
+                  Object {
+                    "color": "#90403E",
+                  }
+                }
+                aria-current="page"
+                className="link"
+                name="vehicles"
+                to="/vehicles"
+              >
+                VEHICLES
+              </NavLink>
             </button>
             <button
-              name="favorites"
+              className="nav-button"
             >
-              FAVORTIES: 
-              4
+              <NavLink
+                activeClassName="active"
+                activeStyle={
+                  Object {
+                    "color": "#90403E",
+                  }
+                }
+                aria-current="page"
+                className="link"
+                name="favorites"
+                to="/favorites"
+              >
+                FAVORTIES: 
+                4
+              </NavLink>
             </button>
           </section>,
           <section
@@ -205,25 +486,77 @@ ShallowWrapper {
           "props": Object {
             "children": Array [
               <button
-                name="people"
+                className="nav-button"
               >
-                PEOPLE
+                <NavLink
+                  activeClassName="active"
+                  activeStyle={
+                    Object {
+                      "color": "#90403E",
+                    }
+                  }
+                  aria-current="page"
+                  className="link"
+                  name="people"
+                  to="/people"
+                >
+                  PEOPLE
+                </NavLink>
               </button>,
               <button
-                name="planets"
+                className="nav-button"
               >
-                PLANETS
+                <NavLink
+                  activeClassName="active"
+                  activeStyle={
+                    Object {
+                      "color": "#90403E",
+                    }
+                  }
+                  aria-current="page"
+                  className="link"
+                  name="planets"
+                  to="/planets"
+                >
+                  PLANETS
+                </NavLink>
               </button>,
               <button
-                name="vehicles"
+                className="nav-button"
               >
-                VEHICLES
+                <NavLink
+                  activeClassName="active"
+                  activeStyle={
+                    Object {
+                      "color": "#90403E",
+                    }
+                  }
+                  aria-current="page"
+                  className="link"
+                  name="vehicles"
+                  to="/vehicles"
+                >
+                  VEHICLES
+                </NavLink>
               </button>,
               <button
-                name="favorites"
+                className="nav-button"
               >
-                FAVORTIES: 
-                4
+                <NavLink
+                  activeClassName="active"
+                  activeStyle={
+                    Object {
+                      "color": "#90403E",
+                    }
+                  }
+                  aria-current="page"
+                  className="link"
+                  name="favorites"
+                  to="/favorites"
+                >
+                  FAVORTIES: 
+                  4
+                </NavLink>
               </button>,
             ],
             "className": "nav",
@@ -235,12 +568,43 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "PEOPLE",
-                "name": "people",
-                "onClick": undefined,
+                "children": <NavLink
+                  activeClassName="active"
+                  activeStyle={
+                    Object {
+                      "color": "#90403E",
+                    }
+                  }
+                  aria-current="page"
+                  className="link"
+                  name="people"
+                  to="/people"
+                >
+                  PEOPLE
+                </NavLink>,
+                "className": "nav-button",
               },
               "ref": null,
-              "rendered": "PEOPLE",
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "activeClassName": "active",
+                  "activeStyle": Object {
+                    "color": "#90403E",
+                  },
+                  "aria-current": "page",
+                  "children": "PEOPLE",
+                  "className": "link",
+                  "name": "people",
+                  "onClick": undefined,
+                  "to": "/people",
+                },
+                "ref": null,
+                "rendered": "PEOPLE",
+                "type": [Function],
+              },
               "type": "button",
             },
             Object {
@@ -248,12 +612,43 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "PLANETS",
-                "name": "planets",
-                "onClick": undefined,
+                "children": <NavLink
+                  activeClassName="active"
+                  activeStyle={
+                    Object {
+                      "color": "#90403E",
+                    }
+                  }
+                  aria-current="page"
+                  className="link"
+                  name="planets"
+                  to="/planets"
+                >
+                  PLANETS
+                </NavLink>,
+                "className": "nav-button",
               },
               "ref": null,
-              "rendered": "PLANETS",
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "activeClassName": "active",
+                  "activeStyle": Object {
+                    "color": "#90403E",
+                  },
+                  "aria-current": "page",
+                  "children": "PLANETS",
+                  "className": "link",
+                  "name": "planets",
+                  "onClick": undefined,
+                  "to": "/planets",
+                },
+                "ref": null,
+                "rendered": "PLANETS",
+                "type": [Function],
+              },
               "type": "button",
             },
             Object {
@@ -261,12 +656,43 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "VEHICLES",
-                "name": "vehicles",
-                "onClick": undefined,
+                "children": <NavLink
+                  activeClassName="active"
+                  activeStyle={
+                    Object {
+                      "color": "#90403E",
+                    }
+                  }
+                  aria-current="page"
+                  className="link"
+                  name="vehicles"
+                  to="/vehicles"
+                >
+                  VEHICLES
+                </NavLink>,
+                "className": "nav-button",
               },
               "ref": null,
-              "rendered": "VEHICLES",
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "activeClassName": "active",
+                  "activeStyle": Object {
+                    "color": "#90403E",
+                  },
+                  "aria-current": "page",
+                  "children": "VEHICLES",
+                  "className": "link",
+                  "name": "vehicles",
+                  "onClick": undefined,
+                  "to": "/vehicles",
+                },
+                "ref": null,
+                "rendered": "VEHICLES",
+                "type": [Function],
+              },
               "type": "button",
             },
             Object {
@@ -274,18 +700,50 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": Array [
+                "children": <NavLink
+                  activeClassName="active"
+                  activeStyle={
+                    Object {
+                      "color": "#90403E",
+                    }
+                  }
+                  aria-current="page"
+                  className="link"
+                  name="favorites"
+                  to="/favorites"
+                >
+                  FAVORTIES: 
+                  4
+                </NavLink>,
+                "className": "nav-button",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "activeClassName": "active",
+                  "activeStyle": Object {
+                    "color": "#90403E",
+                  },
+                  "aria-current": "page",
+                  "children": Array [
+                    "FAVORTIES: ",
+                    4,
+                  ],
+                  "className": "link",
+                  "name": "favorites",
+                  "onClick": undefined,
+                  "to": "/favorites",
+                },
+                "ref": null,
+                "rendered": Array [
                   "FAVORTIES: ",
                   4,
                 ],
-                "name": "favorites",
-                "onClick": undefined,
+                "type": [Function],
               },
-              "ref": null,
-              "rendered": Array [
-                "FAVORTIES: ",
-                4,
-              ],
               "type": "button",
             },
           ],

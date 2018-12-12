@@ -1,10 +1,9 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 
 import App from './App';
 import { mockData } from '../../helpers/mockData';
 import * as Helper from '../../helpers/Helper';
-//Mock out helper file?? Not sure how??
 
 describe('App', () => {
   it('should match the snapshot with all data passed in correctly', () => {
@@ -34,9 +33,6 @@ describe('App', () => {
       const expected = 'people';
       expect(wrapper.state('displayData')).toEqual(expected);
     });
-    it('should log error message if people not fetched', () => {
-      //ADD TEST
-    });
   });
 
   describe('setPlanetsData', () => {
@@ -49,9 +45,6 @@ describe('App', () => {
       const expected = 'planets';
       expect(wrapper.state('displayData')).toEqual(expected);
     });
-    it('should log error message if planets not fetched', () => {
-      //ADD TEST
-    });
   });
 
   describe('setVehicleData', () => {
@@ -63,9 +56,6 @@ describe('App', () => {
       wrapper.instance().setVehicleData(mockVehicles);
       const expected = 'vehicles';
       expect(wrapper.state('displayData')).toEqual(expected);
-    });
-    it('should log error message if vehicles not fetched', () => {
-      //ADD TEST
     });
   });
 
@@ -176,11 +166,82 @@ describe('App', () => {
     });
   });
 
+  describe('storeArrayData', () => {
+    it('should set item in localstorage', () => {
+      localStorage.clear();
+      const wrapper = shallow(<App />);
+      const mockArray = ['tatooine', 'alderan'];
+      const mockKey = 'planets';
+      wrapper.instance().storeArrayData(mockArray, mockKey);
+
+      expect(localStorage).toHaveProperty(mockKey, JSON.stringify(mockArray));
+    });
+  });
+
+  describe('getStoredData', () => {
+    it('should setState after retrieving from localstorage', () => {
+      const expected = {
+        planets: ['tatooine'],
+        people: ['Luke Skywalker'],
+        vehicle: ['sand crawler']
+      };
+
+      const wrapper = shallow(<App />);
+
+      wrapper.instance().storeArrayData(['tatooine'], 'planets');
+
+      wrapper.instance().storeArrayData(['Luke Skywalker'], 'people');
+
+      wrapper.instance().storeArrayData(['Sand Crawler'], 'vehicles');
+
+      wrapper.instance().getStoredData();
+
+      expect(wrapper.state('people')).toEqual(['Luke Skywalker']);
+      expect(wrapper.state('planets')).toEqual(['tatooine']);
+      expect(wrapper.state('vehicles')).toEqual(['Sand Crawler']);
+    });
+  });
+
   describe('toggleFavorite', () => {
-    it('', () => {});
+    it('should set state after calling toggleFavorite', () => {
+      const wrapper = shallow(<App />);
+
+      const mockCard = {
+        category: 'people',
+        homeworld: 'Tatooine',
+        isFavorite: true,
+        name: 'Luke Skywalker',
+        population: '200000',
+        species: 'Humannn'
+      };
+
+      const expected = [];
+
+      wrapper.instance().toggleFavorite(mockCard, () => {
+        expect(wrapper.state('people')).toEqual(expected);
+      });
+    });
   });
 
   describe('displayFavorites', () => {
-    it('', () => {});
+    it('should filter by favorite cards and set state', () => {
+      const mockFavCard = {
+        category: 'people',
+        homeworld: 'Tatooine',
+        isFavorite: true,
+        name: 'Luke Skywalker',
+        population: '200000',
+        species: 'Humannn'
+      };
+
+      const wrapper = shallow(<App />);
+      const expected = [mockFavCard];
+
+      wrapper.setState({ people: [mockFavCard] });
+
+      wrapper.instance().displayFavorites();
+
+      expect(wrapper.state('people')).toEqual(expected);
+    });
   });
 });

@@ -30,43 +30,54 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        <button
-          onClick={[Function]}
+        <div
+          className="button-div"
         >
-          favorite
-        </button>,
-        <ul
-          className="temp"
+          <button
+            className="fave-button"
+            onClick={[Function]}
+          >
+            <i
+              className="far fa-star one"
+            />
+          </button>
+        </div>,
+        <div
+          className="list-container"
         >
-          <li
-            className="temp"
+          <ul
+            className="info-section"
           >
-            name
-            : 
-            Luke Skywalker
-          </li>
-          <li
-            className="temp"
-          >
-            homeworld
-            : 
-            Tatooine
-          </li>
-          <li
-            className="temp"
-          >
-            population
-            : 
-            200000
-          </li>
-          <li
-            className="temp"
-          >
-            species
-            : 
-            Human
-          </li>
-        </ul>,
+            <li
+              className="info"
+            >
+              name
+              : 
+              Luke Skywalker
+            </li>
+            <li
+              className="info"
+            >
+              homeworld
+              : 
+              Tatooine
+            </li>
+            <li
+              className="info"
+            >
+              population
+              : 
+              200000
+            </li>
+            <li
+              className="info"
+            >
+              species
+              : 
+              Human
+            </li>
+          </ul>
+        </div>,
       ],
       "className": "card",
     },
@@ -77,232 +88,113 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": "favorite",
-          "onClick": [Function],
+          "children": <button
+            className="fave-button"
+            onClick={[Function]}
+          >
+            <i
+              className="far fa-star one"
+            />
+          </button>,
+          "className": "button-div",
         },
         "ref": null,
-        "rendered": "favorite",
-        "type": "button",
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <i
+              className="far fa-star one"
+            />,
+            "className": "fave-button",
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "className": "far fa-star one",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "i",
+          },
+          "type": "button",
+        },
+        "type": "div",
       },
       Object {
         "instance": null,
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": Array [
-            <li
-              className="temp"
-            >
-              name
-              : 
-              Luke Skywalker
-            </li>,
-            <li
-              className="temp"
-            >
-              homeworld
-              : 
-              Tatooine
-            </li>,
-            <li
-              className="temp"
-            >
-              population
-              : 
-              200000
-            </li>,
-            <li
-              className="temp"
-            >
-              species
-              : 
-              Human
-            </li>,
-            undefined,
-            undefined,
-          ],
-          "className": "temp",
-        },
-        "ref": null,
-        "rendered": Array [
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": Array [
-                "name",
-                ": ",
-                "Luke Skywalker",
-              ],
-              "className": "temp",
-            },
-            "ref": null,
-            "rendered": Array [
-              "name",
-              ": ",
-              "Luke Skywalker",
-            ],
-            "type": "li",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": Array [
-                "homeworld",
-                ": ",
-                "Tatooine",
-              ],
-              "className": "temp",
-            },
-            "ref": null,
-            "rendered": Array [
-              "homeworld",
-              ": ",
-              "Tatooine",
-            ],
-            "type": "li",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": Array [
-                "population",
-                ": ",
-                "200000",
-              ],
-              "className": "temp",
-            },
-            "ref": null,
-            "rendered": Array [
-              "population",
-              ": ",
-              "200000",
-            ],
-            "type": "li",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": Array [
-                "species",
-                ": ",
-                "Human",
-              ],
-              "className": "temp",
-            },
-            "ref": null,
-            "rendered": Array [
-              "species",
-              ": ",
-              "Human",
-            ],
-            "type": "li",
-          },
-          undefined,
-          undefined,
-        ],
-        "type": "ul",
-      },
-    ],
-    "type": "div",
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "host",
-      "props": Object {
-        "children": Array [
-          <button
-            onClick={[Function]}
-          >
-            favorite
-          </button>,
-          <ul
-            className="temp"
+          "children": <ul
+            className="info-section"
           >
             <li
-              className="temp"
+              className="info"
             >
               name
               : 
               Luke Skywalker
             </li>
             <li
-              className="temp"
+              className="info"
             >
               homeworld
               : 
               Tatooine
             </li>
             <li
-              className="temp"
+              className="info"
             >
               population
               : 
               200000
             </li>
             <li
-              className="temp"
+              className="info"
             >
               species
               : 
               Human
             </li>
           </ul>,
-        ],
-        "className": "card",
-      },
-      "ref": null,
-      "rendered": Array [
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "favorite",
-            "onClick": [Function],
-          },
-          "ref": null,
-          "rendered": "favorite",
-          "type": "button",
+          "className": "list-container",
         },
-        Object {
+        "ref": null,
+        "rendered": Object {
           "instance": null,
           "key": undefined,
           "nodeType": "host",
           "props": Object {
             "children": Array [
               <li
-                className="temp"
+                className="info"
               >
                 name
                 : 
                 Luke Skywalker
               </li>,
               <li
-                className="temp"
+                className="info"
               >
                 homeworld
                 : 
                 Tatooine
               </li>,
               <li
-                className="temp"
+                className="info"
               >
                 population
                 : 
                 200000
               </li>,
               <li
-                className="temp"
+                className="info"
               >
                 species
                 : 
@@ -311,13 +203,13 @@ ShallowWrapper {
               undefined,
               undefined,
             ],
-            "className": "temp",
+            "className": "info-section",
           },
           "ref": null,
           "rendered": Array [
             Object {
               "instance": null,
-              "key": undefined,
+              "key": "name",
               "nodeType": "host",
               "props": Object {
                 "children": Array [
@@ -325,7 +217,7 @@ ShallowWrapper {
                   ": ",
                   "Luke Skywalker",
                 ],
-                "className": "temp",
+                "className": "info",
               },
               "ref": null,
               "rendered": Array [
@@ -337,7 +229,7 @@ ShallowWrapper {
             },
             Object {
               "instance": null,
-              "key": undefined,
+              "key": "homeworld",
               "nodeType": "host",
               "props": Object {
                 "children": Array [
@@ -345,7 +237,7 @@ ShallowWrapper {
                   ": ",
                   "Tatooine",
                 ],
-                "className": "temp",
+                "className": "info",
               },
               "ref": null,
               "rendered": Array [
@@ -357,7 +249,7 @@ ShallowWrapper {
             },
             Object {
               "instance": null,
-              "key": undefined,
+              "key": "population",
               "nodeType": "host",
               "props": Object {
                 "children": Array [
@@ -365,7 +257,7 @@ ShallowWrapper {
                   ": ",
                   "200000",
                 ],
-                "className": "temp",
+                "className": "info",
               },
               "ref": null,
               "rendered": Array [
@@ -377,7 +269,7 @@ ShallowWrapper {
             },
             Object {
               "instance": null,
-              "key": undefined,
+              "key": "species",
               "nodeType": "host",
               "props": Object {
                 "children": Array [
@@ -385,7 +277,7 @@ ShallowWrapper {
                   ": ",
                   "Human",
                 ],
-                "className": "temp",
+                "className": "info",
               },
               "ref": null,
               "rendered": Array [
@@ -399,6 +291,282 @@ ShallowWrapper {
             undefined,
           ],
           "type": "ul",
+        },
+        "type": "div",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div
+            className="button-div"
+          >
+            <button
+              className="fave-button"
+              onClick={[Function]}
+            >
+              <i
+                className="far fa-star one"
+              />
+            </button>
+          </div>,
+          <div
+            className="list-container"
+          >
+            <ul
+              className="info-section"
+            >
+              <li
+                className="info"
+              >
+                name
+                : 
+                Luke Skywalker
+              </li>
+              <li
+                className="info"
+              >
+                homeworld
+                : 
+                Tatooine
+              </li>
+              <li
+                className="info"
+              >
+                population
+                : 
+                200000
+              </li>
+              <li
+                className="info"
+              >
+                species
+                : 
+                Human
+              </li>
+            </ul>
+          </div>,
+        ],
+        "className": "card",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <button
+              className="fave-button"
+              onClick={[Function]}
+            >
+              <i
+                className="far fa-star one"
+              />
+            </button>,
+            "className": "button-div",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <i
+                className="far fa-star one"
+              />,
+              "className": "fave-button",
+              "onClick": [Function],
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "className": "far fa-star one",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "i",
+            },
+            "type": "button",
+          },
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <ul
+              className="info-section"
+            >
+              <li
+                className="info"
+              >
+                name
+                : 
+                Luke Skywalker
+              </li>
+              <li
+                className="info"
+              >
+                homeworld
+                : 
+                Tatooine
+              </li>
+              <li
+                className="info"
+              >
+                population
+                : 
+                200000
+              </li>
+              <li
+                className="info"
+              >
+                species
+                : 
+                Human
+              </li>
+            </ul>,
+            "className": "list-container",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <li
+                  className="info"
+                >
+                  name
+                  : 
+                  Luke Skywalker
+                </li>,
+                <li
+                  className="info"
+                >
+                  homeworld
+                  : 
+                  Tatooine
+                </li>,
+                <li
+                  className="info"
+                >
+                  population
+                  : 
+                  200000
+                </li>,
+                <li
+                  className="info"
+                >
+                  species
+                  : 
+                  Human
+                </li>,
+                undefined,
+                undefined,
+              ],
+              "className": "info-section",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": "name",
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    "name",
+                    ": ",
+                    "Luke Skywalker",
+                  ],
+                  "className": "info",
+                },
+                "ref": null,
+                "rendered": Array [
+                  "name",
+                  ": ",
+                  "Luke Skywalker",
+                ],
+                "type": "li",
+              },
+              Object {
+                "instance": null,
+                "key": "homeworld",
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    "homeworld",
+                    ": ",
+                    "Tatooine",
+                  ],
+                  "className": "info",
+                },
+                "ref": null,
+                "rendered": Array [
+                  "homeworld",
+                  ": ",
+                  "Tatooine",
+                ],
+                "type": "li",
+              },
+              Object {
+                "instance": null,
+                "key": "population",
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    "population",
+                    ": ",
+                    "200000",
+                  ],
+                  "className": "info",
+                },
+                "ref": null,
+                "rendered": Array [
+                  "population",
+                  ": ",
+                  "200000",
+                ],
+                "type": "li",
+              },
+              Object {
+                "instance": null,
+                "key": "species",
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    "species",
+                    ": ",
+                    "Human",
+                  ],
+                  "className": "info",
+                },
+                "ref": null,
+                "rendered": Array [
+                  "species",
+                  ": ",
+                  "Human",
+                ],
+                "type": "li",
+              },
+              undefined,
+              undefined,
+            ],
+            "type": "ul",
+          },
+          "type": "div",
         },
       ],
       "type": "div",

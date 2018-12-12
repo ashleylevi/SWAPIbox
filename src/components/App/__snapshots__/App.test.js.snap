@@ -17,48 +17,29 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "children": Array [
-        <Header />,
-        <Nav
-          displayFavorites={[Function]}
-          fetchData={[Function]}
-        />,
-        <ScrollingText />,
-      ],
+      "children": <Home
+        cardCount={0}
+        currentFilm={Object {}}
+        displayFavorites={[Function]}
+        fetchData={[Function]}
+      />,
+      "className": "App",
     },
     "ref": null,
-    "rendered": Array [
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {},
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "function",
+      "props": Object {
+        "cardCount": 0,
+        "currentFilm": Object {},
+        "displayFavorites": [Function],
+        "fetchData": [Function],
       },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "displayFavorites": [Function],
-          "fetchData": [Function],
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {},
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-    ],
+      "ref": null,
+      "rendered": null,
+      "type": [Function],
+    },
     "type": "div",
   },
   Symbol(enzyme.__nodes__): Array [
@@ -67,48 +48,29 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "host",
       "props": Object {
-        "children": Array [
-          <Header />,
-          <Nav
-            displayFavorites={[Function]}
-            fetchData={[Function]}
-          />,
-          <ScrollingText />,
-        ],
+        "children": <Home
+          cardCount={0}
+          currentFilm={Object {}}
+          displayFavorites={[Function]}
+          fetchData={[Function]}
+        />,
+        "className": "App",
       },
       "ref": null,
-      "rendered": Array [
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {},
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "cardCount": 0,
+          "currentFilm": Object {},
+          "displayFavorites": [Function],
+          "fetchData": [Function],
         },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "displayFavorites": [Function],
-            "fetchData": [Function],
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {},
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-      ],
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
       "type": "div",
     },
   ],
