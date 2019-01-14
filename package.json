@@ -1,6 +1,6 @@
 {
   "name": "swapibox",
-  "homepage": "http://ashleylevi.github.io/SWAPIbox"
+  "homepage": "http://ashleylevi.github.io/SWAPIbox",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
