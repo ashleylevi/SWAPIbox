@@ -1,5 +1,6 @@
 {
   "name": "swapibox",
+  "homepage": "http://ashleylevi.github.io/SWAPIbox"
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -16,7 +17,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "eslint src/**/*.js --ignore-pattern node_modules/ --ignore-pattern src/serviceWorker.js"
+    "lint": "eslint src/**/*.js --ignore-pattern node_modules/ --ignore-pattern src/serviceWorker.js",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
