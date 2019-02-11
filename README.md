@@ -13,17 +13,6 @@
 * Use propTypes to validate props passed to each component.
 * Write meaningful, comprehensive unit and integration tests.
 
-![home-page](assets/swapi1.gif)
-![navigating-page](assets/showingcards.gif)
-![favoriting](assets/savingfavorites.gif)
-
-
-
-### Original Wireframe:
-
-![swapibox-wireframe](assets/swapibox-wireframe.png)
-
-
 ### Installation and Setup Instructions
 
 1. Clone down this repository.
@@ -33,6 +22,18 @@
 3. Run `npm install` in terminal.
 
 4. Run `npm start` in terminal to start server.
+
+### Gifs
+
+![home-page](assets/swapi1.gif)
+![navigating-page](assets/showingcards.gif)
+![favoriting](assets/savingfavorites.gif)
+
+
+### Original Wireframe:
+
+![swapibox-wireframe](assets/swapibox-wireframe.png)
+
 
 ### Contributors 
 
